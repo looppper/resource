@@ -221,3 +221,103 @@ org-mode用法
 春与冬两个转折的部分都使用了云作为结尾
    => 秋天的气味
    => 天空被云一分为二(表达女主的心情也同样阴沉, 看似平稳, 其实却不知所措)
+
+#+date: <2019-07-04 Thu>
+* new day
+
+不要逃避
+各个工作穿插着做吧
+重要的不是做什么, 而是是否认真去做
+
+可能睡过的时候可以用闹钟来提醒
+
+在吃饭之前讨论一下什么是逃避, 在考虑晚上去哪儿学习
+如果需要走, 则记得文件同步
+记得换鞋, 或者用创可贴
+
+启动的几个必要项: 
+dhcpcd, openvpn
+myinit, xcompxxx
+ccc
+emacs
+vbox
+film
+
+** 如何进行同步
+*** git
+1. 在使用git init, 而不加bare参数的时候在仓库要进行git reset --hard
+2. 在创建仓库的时候要在.git/config中添加 [receive] denyCurrrentBranch = ignore, 保证允许提交
+
+*** ssh
+ssh同步时直接将rsa文件加入到au文件中即可
+
+*** tmux
+"/%: 分屏
+$: 重命名
+ls/at -t x
+
+
+money
+做报销表 1500
+
+** lammps
+主核跑通, 纯净版, 之后再优化eff模块, 优化过程参照lj与 tersoff
+
+原本的代码会出现运行时的错误
+
+当前的几个可运行版本:  
+   bk:        main
+   lammps-11: md2
+   main:      main
+   pure:      main
+   stable:    main
+   z1:        md1
+   zhu:       md1
+   1. 位置: 当前目录下的几个文件, ybj下的几个文件
+   2. 编译方式: sunway or mpi(主要不记得当初跑通的时候的编译方式)
+
+
+** org-mode
+*** 页面显示情况
+#+STARTUP: 
+1. overview: 只展示最高级标签
+2. content:  
+3. showall:
+
+*** 只显示当前subtree
+C-x n s/w
+
+*** 匹配高亮
+C-c / + 内容
+C-c C-c取消
+
+*** 列表
+   - 有序 :: 1) or 1.
+   - 无序 :: +, - or *
+   - 描述方式 :: 
+   - checkbox, 代表完成状态
+   C-c C-c: 为chekcbox转换状态
+   C-c -: 转换显示方式
+
+*** 脚注
+kajsdfaskjdf[fn:1]
+jskdjf[fn:2]u
+[fn:1] the link is www.asdf.org
+
+C-c C-x f: 脚注的自动创建
+C-c C-c  : 脚注与定义处的跳转
+
+*** tables
+
+| c1    | c2    | c4 | c3    | c5   |
+|-------+-------+----+-------+------|
+| as    | asdjf | f  | sdf   | kj   |
+| aksdj | fj    | js | jkasf | jasd |
+
+
+C-c | : 创建tables
+M-left/right: 向左/右移动该列
+M-S-left/right: 删除/插入一列
+M-up/down: 向上/下移动该行
+M-S-up/down: 删除/插入一行
+C-c -: 插入分割 
