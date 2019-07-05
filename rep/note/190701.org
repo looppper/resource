@@ -292,6 +292,7 @@ money
 
 
 ** org-mode
+   在总结完 org 之后, 总结一些自己能用到的方法
 *** 页面显示情况
 #+STARTUP: 
 1. overview: 只展示最高级标签
@@ -369,6 +370,10 @@ file:./n1.org
      + C-c , :: 设置优先级
      + S-up/down :: 增加/降低优先级
 
+**** subtask
+     建议在大纲下给出完成的百分比, 可以以分数或百分比方式显示
+
+**** Checkboxes
 
 **** 示例
 
@@ -378,6 +383,12 @@ file:./n1.org
 ***** TODO film
 
 ***** TODO [#A] priority
+
+***** TODO Organize party [1/2]
+      - [-] call people [50%]
+        - [ ] Peter
+        - [X] Sarah
+      - [X] order food
 
 * 待整理
 继续讨论逃避
