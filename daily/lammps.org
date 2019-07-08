@@ -1,6 +1,7 @@
 #+DATE: <2019-07-08 Mon>
 #+STARTUP: SHOWALL
 #+TAGS: lammps, sw
+#+TODO: TODO(t) | DONE(d)
 
 ** lammps
 *** 基本优化过程
@@ -10,26 +11,67 @@
 
 *** 当前的几个可运行版本:  
     - bk        :: main
-    - lammps-11 :: md2
     - main      :: main
     - pure      :: main
     - stable    :: main
     - z1        :: md1
     - zhu       :: md1
+    - lammps-11 :: md2
 *** 几个注意的问题 
     - 位置: 当前目录下的几个文件, ybj 下的几个文件
     - 编译方式: sunway or mpi(主要不记得当初跑通的时候的编译方式)
  
 *** 纯净版的选定
-**** TODO bk 与 main 的编译运行结果
-     DEADLINE: <2019-07-08 Mon 19:00-19:30>
-**** TODO pure 与 stable 的编译运行结果
-     DEADLINE: <2019-07-08 Mon 19:30-20:00>
 **** TODO 原版的编译运行结果
-     DEADLINE: <2019-07-08 Mon 20:00-20:20>
+     DEADLINE: <2019-07-08 Mon 19:10-19:40>
+***** 需要考虑的因素
+      - 编译方式及编译文件的选择
+***** step  [10/10]
+****** DONE 找到项目代码
+       CLOSED: [2019-07-08 Mon 19:43] DEADLINE: <2019-07-08 Mon 19:25>
+****** DONE 编译 mpi 版本(不加入 lmp 与 make.sunway)
+       CLOSED: [2019-07-08 Mon 19:42] DEADLINE: <2019-07-08 Mon 19:35>
+****** DONE 找到测试样例
+       CLOSED: [2019-07-08 Mon 19:43] DEADLINE: <2019-07-08 Mon 19:40>
+****** DONE 运行 mpi 版本
+       CLOSED: [2019-07-08 Mon 19:43] DEADLINE: <2019-07-08 Mon 19:45>
+       依旧出现 reallocate 问题
+****** DONE 加入 lmp 重新编译运行, 此时依旧使用 mpi
+       CLOSED: [2019-07-08 Mon 19:48] DEADLINE: <2019-07-08 Mon 19:50>
+       问题依旧
+****** DONE 加入 make.sunway 进行编译运行
+       CLOSED: [2019-07-08 Mon 20:49] DEADLINE: <2019-07-08 Mon 21:00>
+       单核正在测试, 多核组依旧有问题, 也就是无论如何多核组还是会出现问题
+       单核组貌似在运行第一步时就会卡住
+****** DONE 进行文件重新编译的再次测试
+       CLOSED: [2019-07-08 Mon 20:56] DEADLINE: <2019-07-08 Mon 20:15>
+       问题依旧, 20:50 再跑一次, 但多核组不能跑就是有问题, 单核可运行
+****** DONE 换提交参数
+       CLOSED: [2019-07-08 Mon 21:12] DEADLINE: <2019-07-08 Mon 21:05>
+       问题依旧
+****** DONE 换一组 eff 测试样例
+       CLOSED: [2019-07-08 Mon 21:19] DEADLINE: <2019-07-08 Mon 21:25>
+****** DONE 换一组类型测试样例
+       CLOSED: [2019-07-08 Mon 21:19] DEADLINE: <2019-07-08 Mon 21:35>
+***** 可能的编译方式
+      在纯净版中是以 mpi 方式编译, 而对于 md1 版本则是以 sunway 版本编译
+**** DONE 运行 md1 版本, 观察其是否能够运行
+     CLOSED: [2019-07-08 Mon 21:39] DEADLINE: <2019-07-08 Mon 21:40>
+     ok
+***** 目的
+      这个步骤只是验证 md1 版本的可行性, 但要修改的版本依旧为纯净版
+**** TODO bk 与 main 的编译运行结果
+     DEADLINE: <2019-07-08 Mon 19:30-19:50>
+**** TODO pure 与 stable 的编译运行结果
+     DEADLINE: <2019-07-08 Mon 19:50-20:20>
 **** TODO 重新整理 lammps 文件夹
      DEADLINE: <2019-07-08 Mon 20:20-20:40>
 **** TODO 将已修改的部分放置到正确的版本中进行测试
      DEADLINE: <2019-07-08 Mon 20:40-21:00>
 
+
+*** 文件夹命名方式
+    - lammps   :: pure
+    - lammps_2 :: pure
+    - lammps_3 :: md1
 
