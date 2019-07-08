@@ -5,17 +5,17 @@
 ** org-mode
    在总结完 org 之后, 总结一些自己能用到的方法
 *** 页面显示情况
-#+STARTUP: 
-1. overview: 只展示最高级标签
-2. content:  
-3. showall:
+    #+STARTUP: 
+    1. overview: 只展示最高级标签
+    2. content:  
+    3. showall:
 
 *** 只显示当前 subtree
-C-x n s/w
+    C-x n s/w
 
 *** 匹配高亮
-C-c / + 内容
-C-c C-c 取消
+    C-c / + 内容
+    C-c C-c 取消
 
 *** 列表
    - 有序 :: 1) or 1.
@@ -26,8 +26,8 @@ C-c C-c 取消
    C-c -: 转换显示方式
 
 *** 脚注
-kajsdfaskjdf[fn:1]
-jskdjf[fn:2]u
+    kajsdfaskjdf[fn:1]
+    jskdjf[fn:2]
 [fn:1] the link is www.asdf.org
 
 C-c C-x f: 脚注的自动创建
@@ -69,7 +69,7 @@ file:./n1.org
     S-right/left: 类似上个
     C-c / t: 在 sparse tree 中显示出 TODO
     C-c a t: 显示 TODO 标识在不同状态
-    S-M RET: 给出一个新的 todo entry(或者一个checkbox entry)
+    S-M RET: 给出一个新的 todo entry(或者一个 checkbox entry)
     
 **** 设置关键词
     + 设置 TODO 关键词, 并且在每个文件中单独设置, 在配置文件中是总的, 而在文件中单独设置则更加优先
@@ -101,21 +101,26 @@ file:./n1.org
         - [X] Sarah
       - [X] order food
 
-      问题: 这种多级的方式, 在子项checkbox全部结束后也不会自动变为DONE模式
+      问题: 这种多级的方式, 在子项 checkbox 全部结束后也不会自动变为 DONE 模式
 
 *** TAG
 
 **** shortcut
-     - C-c C-q :: 设置当前headline下的tag
+     - C-c C-q :: 设置当前 headline 下的 tag
 
 **** 继承
      上级标题对下级标题的标签有继承的关系
 
-**** 自定义默认tag
+**** 自定义默认 tag
 
 
 **** 示例
 
 ***** level1                                                           :work:
-kksdf
 ****** level2                                                          :note:
+
+*** Properties
+*** Dates and Times
+**** Shortcuts
+     - C-c C-d :: 插入 deadline
+

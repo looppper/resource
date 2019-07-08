@@ -1,0 +1,35 @@
+#+DATE: <2019-07-08 Mon>
+#+STARTUP: SHOWALL
+#+TAGS: lammps, sw
+
+** lammps
+*** 基本优化过程
+   主核跑通, 纯净版, 之后再优化 eff 模块, 优化过程参照 lj 与 tersoff
+
+   原本的代码会出现运行时的错误
+
+*** 当前的几个可运行版本:  
+    - bk        :: main
+    - lammps-11 :: md2
+    - main      :: main
+    - pure      :: main
+    - stable    :: main
+    - z1        :: md1
+    - zhu       :: md1
+*** 几个注意的问题 
+    - 位置: 当前目录下的几个文件, ybj 下的几个文件
+    - 编译方式: sunway or mpi(主要不记得当初跑通的时候的编译方式)
+ 
+*** 纯净版的选定
+**** TODO bk 与 main 的编译运行结果
+     DEADLINE: <2019-07-08 Mon 19:00-19:30>
+**** TODO pure 与 stable 的编译运行结果
+     DEADLINE: <2019-07-08 Mon 19:30-20:00>
+**** TODO 原版的编译运行结果
+     DEADLINE: <2019-07-08 Mon 20:00-20:20>
+**** TODO 重新整理 lammps 文件夹
+     DEADLINE: <2019-07-08 Mon 20:20-20:40>
+**** TODO 将已修改的部分放置到正确的版本中进行测试
+     DEADLINE: <2019-07-08 Mon 20:40-21:00>
+
+
