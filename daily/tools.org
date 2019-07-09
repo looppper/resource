@@ -1,0 +1,22 @@
+#+DATE: <2019-07-09 Tue>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* tools
+** git
+*** 建库
+    1. 在使用 git init, 而不加 bare 参数的时候在仓库要进行 git reset --hard
+    2. 在创建仓库的时候要在.git/config 中添加 [receive] denyCurrrentBranch = ignore, 保证允许提交
+*** 提交记录
+    git log
+*** 回退版本
+    git reset --hard xxx(自动查询前几位)
+*** git reflog
+
+** ssh
+    ssh 同步时直接将 rsa 文件加入到 au 文件中即可
+
+** tmux
+    "/%: 分屏
+    $: 重命名
+    ls/at -t x

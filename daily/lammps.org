@@ -60,18 +60,75 @@
      ok
 ***** 目的
       这个步骤只是验证 md1 版本的可行性, 但要修改的版本依旧为纯净版
-**** TODO 主核版本修改
-     DEADLINE: <2019-07-08 Mon 20:40-21:00>
-***** 流程
-      - 从错误入手, 且参照从核版
-      - 参照 github 的历史提交
-      - 请教 duan 了只能,
-**** TODO 将已修改的部分放置到正确的版本中进行测试
-     DEADLINE: <2019-07-08 Mon 20:40-21:00>
+**** DONE 运行 github 的版本
+     CLOSED: [2019-07-09 Tue 16:00] DEADLINE: <2019-07-08 Mon 20:40-21:00>
+***** DONE 将 git 库转到 server 中
+      CLOSED: [2019-07-09 Tue 11:00] DEADLINE: <2019-07-09 Tue 10:50>
+***** DONE 从后向前评估至少三个的内容
+      CLOSED: [2019-07-09 Tue 11:38] DEADLINE: <2019-07-09 Tue 11:05>
+      - 1st :: 提交版本, 只有 lj_sw, pair_sw, 但内容未看, 目前确定是没有 simd 的
+      - 2nd :: 只给了一个测试样例
+      - 3rd :: 给了 gptl 等几小处修改
+***** DONE 运行两个版本
+      CLOSED: [2019-07-09 Tue 11:38] DEADLINE: <2019-07-09 Tue 11:30>
+****** DONE 1st
+       CLOSED: [2019-07-09 Tue 11:38]
+       成功运行, 第一阶段 200 步 69 秒, 与 md1 版性能一致
+****** DONE 3rd
+       CLOSED: [2019-07-09 Tue 11:38]
+       由于上个例子成功运行, 这个例子暂时不进行测试
+***** DONE 给出在能够运行的, 且性能最好的, 且最大可能不会出错的版本(没有任何 simd/doublev4 代码)
+      CLOSED: [2019-07-09 Tue 12:07] DEADLINE: <2019-07-09 Tue 12:10>
+      - ad255 :: newest
+      - bbafa :: 存在向量化
+      - 46913 :: 存在向量化/6 
+      - 89cdc :: 存在向量化/6
+      - 3c20c :: 原版同样存在 doublev4/4, 只在 reduce 中使用
+***** 将 oldest 与 46913 版本带入
+**** 版本 diff
+***** step
+      DEADLINE: <2019-07-09 Tue>
+****** 46913
+****** DONE 3c20c
+       CLOSED: [2019-07-09 Tue 16:00] DEADLINE: <2019-07-09 Tue 15:50>
+       - sunway.h
+       - pair_lj_cut_sunway.cpp
+       - pair_lj_cut_sw64.c
+         只进行了 reduce 等几个简单的赋值
 
+**** TODO 将已修改的部分放置到正确的版本中进行测试
+     DEADLINE: <2019-07-09 Tue 16:30>
+***** 目的
+      在单个核组下跑通, 也就是需要与 th 下的到同样的结果
+      ?? 全部跑通了??
+***** step
+****** DONE 建一个新的代码, 并 run
+       CLOSED: [2019-07-09 Tue 16:35] DEADLINE: <2019-07-09 Tue 16:10>
+****** DONE 移植 eff 与 Makefile.sunway
+       CLOSED: [2019-07-09 Tue 16:35] DEADLINE: <2019-07-09 Tue 16:20>
+       - pair_eff_cut_cpp
+       - pair_eff_cut_sw.c
+       - pair_eff_cut_sw.h
+       - pair_eff_inline.h
+****** DONE run
+       CLOSED: [2019-07-09 Tue 16:35] DEADLINE: <2019-07-09 Tue 16:30>
+       全部跑通
+****** TODO 测试在多少 CG 能够正常运行
+       最多可运行 10 个CG
+****** TODO 加入打印语句
+       测试其是否正常运行
+**** TODO 准备所需文件
 
 *** 文件夹命名方式
-    - lammps   :: pure
-    - lammps_2 :: pure
-    - lammps_3 :: md1
+    - lammps     :: pure
+    - lammps_2   :: pure
+    - lammps_3   :: md1
+    - lammps_git :: pure_new
+    - lammps_st1 :: 在主核版本移植初步 eff 从核
+
+*** 基本流程
+    - 解压 lammps 与 lammps-sunway
+    - 放入 lmp 与 makefile, gptl.h
+    - 编译(make yes + sunway)
+    - 
 

@@ -4,11 +4,13 @@
 * Description
 
 由于内容放置在一个文件中无法进行有效管理, 且在查找内容时十分不方便, 所以建立这个文件作为所有内容的索引
-这里希望在编辑一个文件时, 能够有两个文件同时变动, 需要查找emacs是否有支持
-[[file:./man.org][org-mode基本用法]]
+这里希望在编辑一个文件时, 能够有两个文件同时变动, 需要查找 emacs 是否有支持
+[[file:./man.org][org-mode 基本用法]]
 
 [[file:./little forest.org][小森林记录]]
 
-[[./ou.org][对于ou的絮絮念]]
+[[./ou.org][对于 ou 的絮絮念]]
 
 [[file:./blog_contruct.org][博客构建]]
+
+[[file:./tools.org][git, ssh, tmux]]
