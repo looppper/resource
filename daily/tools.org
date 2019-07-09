@@ -12,6 +12,8 @@
 *** 回退版本
     git reset --hard xxx(自动查询前几位)
 *** git reflog
+*** git clone
+    可以在本地进行库的复制
 
 ** ssh
     ssh 同步时直接将 rsa 文件加入到 au 文件中即可

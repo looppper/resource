@@ -96,8 +96,8 @@
        - pair_lj_cut_sw64.c
          只进行了 reduce 等几个简单的赋值
 
-**** TODO 将已修改的部分放置到正确的版本中进行测试
-     DEADLINE: <2019-07-09 Tue 16:30>
+**** DONE 将已修改的部分放置到正确的版本中进行测试
+     CLOSED: [2019-07-09 Tue 17:07] DEADLINE: <2019-07-09 Tue 16:30>
 ***** 目的
       在单个核组下跑通, 也就是需要与 th 下的到同样的结果
       ?? 全部跑通了??
@@ -113,11 +113,20 @@
 ****** DONE run
        CLOSED: [2019-07-09 Tue 16:35] DEADLINE: <2019-07-09 Tue 16:30>
        全部跑通
-****** TODO 测试在多少 CG 能够正常运行
-       最多可运行 10 个CG
-****** TODO 加入打印语句
-       测试其是否正常运行
+****** DONE 测试在多少 CG 能够正常运行
+       CLOSED: [2019-07-09 Tue 16:51]
+       最多可运行 10 个 CG
+****** DONE 加入打印语句
+       CLOSED: [2019-07-09 Tue 17:07] DEADLINE: <2019-07-09 Tue 17:00>
+       测试其是否正常运行, 正常输出
 **** TODO 准备所需文件
+***** 目的
+      希望按照 github 上改的流程进行更改
+***** TODO step
+****** TODO 整个 github 库
+****** TODO 整个 lammps source code
+****** TODO lmp, make.sunway, gptl
+****** TODO 改进后的 eff
 
 *** 文件夹命名方式
     - lammps     :: pure
@@ -130,5 +139,5 @@
     - 解压 lammps 与 lammps-sunway
     - 放入 lmp 与 makefile, gptl.h
     - 编译(make yes + sunway)
-    - 
+
 
