@@ -1,0 +1,93 @@
+#+date: <2019-07-18 周四>
+#+startup: showall
+
+** 记录句子的目的
+   我们记录句子不是知道这个句子的意思, 因为那只是阅读的目的, 我们的想法是给出自己的东西, 事实上
+   也就是想一种知道但是不会写的状态, 并且其最终目的也不是对照这汉语, 或者是想成汉语然后翻译成英
+   文, 而是脱口而出英文
+
+
+** 进阶口语
+1. im not following you
+
+2. you made it worse
+
+3. don't ask foolish questions
+
+4. are you satisfied
+
+5. i know what to expect
+
+6. thats exactly what i need
+
+7. dont take risks
+
+8. im in
+
+9. where are you headed
+
+10. are you going to tell me whats going on
+
+11. im very curious
+
+12. i will find out
+
+13. im only intersted in facts
+
+14. what do you have in mind
+
+15. what's the lastest
+
+** [fn:1]基本口语
+
+- 请来些香蕉
+  have some bananas, please
+
+- 该吃蛋糕了
+  its time for cakes
+
+- 我能吃你的吗
+  may i have yours
+
+- 我想我们年龄大概相仿
+  We're about the same age, i think
+
+- 是的, 你是对的
+  yes, you're right
+
+- 我可以进来吗
+  May i come in
+
+- 我能帮你吗
+  Can i help you
+
+- 是的, 给我女儿买条裙子
+  yes, a dress for my daughter
+
+- 你想要什么, 连衣裙还是短裙
+  What do you want, a dress or a shirt
+
+- 这条蓝色的怎么样
+  How about the blue one
+
+- 我怎么走才能到邮局
+  How can i get to the post office
+  
+- 你能告诉我去银行的路怎么走吗
+  Can you show me the way to the bank, please
+
+- 对不起, 我不知道, 你可以去问他
+  sorry, i dont know, you may go and ask him
+
+
+
+* Footnotes
+
+[fn:1] https://wenku.baidu.com/view/7b13c8ee8ad63186bceb19e8b8f67c1cfbd6ee53.html?sxts=1563409557190
+
+
+** 易错
+*** 一般不要用want, 而转用need
+*** drink
+    - [X] Do you want to drink something? 你要不要喝些酒
+    - [X] Do you want to get something to drink? 你想要喝点什么吗
