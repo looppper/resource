@@ -1,0 +1,22 @@
+#+DATE: <2019-07-18 Thu>
+#+STARTUP: SHOWALL
+#+tags: arch, cache, plan
+#+TODO: TODO(t) | DONE(d)
+
+* 论文计划 & 问题 & 细节
+
+** 笔记的记录问题
+   - 笔记的结构设计
+   - 如何在保证内容充实的情况下, 不显得拖沓
+   
+*** 最开始的总结问题
+    更开始由于对内容还在适应阶段, 在独立的内容中不能有效理解整个内容, 所以以对笔记进行记录为主, 这个方法也是遵循先做, 再给出计划的原则
+
+** Utility-Based Cache Partitioning
+*** DONE 将 s 中的内容进行总结
+    CLOSED: [2019-07-18 Thu 23:03] DEADLINE: <2019-07-18 Thu 23:00>
+
+** Utility-Based Cache Partitioning
+*** DONE 将 s 中的内容进行总结
+    CLOSED: [2019-07-18 Thu 23:03] DEADLINE: <2019-07-18 Thu 23:00>
+

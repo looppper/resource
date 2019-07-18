@@ -1,0 +1,30 @@
+#+DATE: <2019-07-18 Thu>
+#+STARTUP: SHOWALL
+#+tags: arch, cache, partition
+#+TODO: TODO(t) | DONE(d)
+
+* 内容总结
+
+** 内容框架
+*** UMON
+    如何在最小的开销中进行最有效的性能评估
+*** 划分算法
+    选择一个保证最小 miss 情况下的 way partition
+
+** 具体做法
+*** UMON   
+    作为一个 performance monitor 的重点, 就是减小多种开销
+**** Tag directory
+     使用一组 tag directory 即可评估 16 个 cache way 的情况
+**** Tag and counter
+     减小 tag 与 counter 的硬件开销
+**** Sample
+     利用切比雪夫不等式估计进行部分 sample 时与全部 sample 时的准确度差别
+*** Partitioning Algorithm
+**** 一般算法
+     基于 LRU 的两应用划分
+**** Scalable Partitioning Algorithm
+     每次将一个 cache way 分为对性能提升最大的应用
+**** The lookahead algorithm
+     为防止非凸情况的出现, 每次分配不等数目的 cache way, 使该应用提升的性能最大
+
