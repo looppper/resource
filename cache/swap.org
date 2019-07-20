@@ -1,0 +1,35 @@
+#+DATE: <2019-07-19 Fri>
+#+STARTUP: SHOWALL
+#+tags: arch, cache, partition
+#+TODO: TODO(t) | DONE(d)
+
+* 内容总结
+
+** 划分特点
+   - 直接集成了 way partition 与 page coloring 的方法
+   - 细粒度(同时使用两种方法直接带来的收益)
+   - 无硬件开销(page coloring 带来的收益)
+
+*** TODO 在结合两种方法带来收益的同时, 会产生什么样的缺点
+
+** 划分算法
+   
+*** Way partitioning
+    首先利用 look ahead 算法进行 way partitioning
+
+*** Page Coloring
+    利用 way partitioning 产生的 cache size 进行 color 分配
+
+**** 关系
+     - 传统 color page 都是等分然后赋给 color
+     - lookahead 只是进行 way partition, 不进行 size 的划分, 而划分则是根据 way 来反向判断 size, size = color * way
+     - 在进行 lookahead 之后, 所有进程的 way 之和应该等于总 way 数, 但在进行 placement 的时候却不是这样, 并且这样做毫无意义
+***** TODO 两个的做法
+***** TODO 该算法是否对 lookahead 进行了修改
+
+** Recolor 算法
+   - Estimate 步骤
+   - Placement 步骤
+   对比: 原有的 recolor 算法是通过 cmr 来分配/回收 color, 而 swap 的 recolor 则与划分几乎无异, 通过 lookahead 的划分 size 分配 color (表面上来讲, coloris recolor 较为简单, 但也是 lookahead 与coloris 的区别)
+
+

@@ -1,0 +1,56 @@
+#+DATE: <2019-07-19 Fri>
+#+STARTUP: SHOWALL
+#+tags: arch, cache, partition
+#+TODO: TODO(t) | DONE(d)
+
+* 内容总结
+
+** 内容摘要
+*** Color-aware allocator
+    进行页面分配
+*** Page color manager
+    对页面进行 color, recolor, monitor 等
+
+** 具体做法
+   
+*** Color 策略划分
+    
+**** 静态划分
+     一旦进行了分配就不会再进行更改
+***** 关系
+     - 只对应 color 与 color 的关系
+     - 进行等分, 寻找最轻负载核等过程
+
+**** 动态过程
+     由于进程所需的资源动态改变会主动改变分配关系
+***** 关系
+      - Color 的回收与共享
+      - 调整每个核的 color 分配
+      - 动态 partition 也存在几等分
+
+*** Monitor
+
+**** Metric -- Hotness
+     一个 color 所共享的进程数
+***** 关系
+      - 代表这个 color 的当前负载
+      - 当这个 color 所共享的进程在单个核中就可以避免冲突
+
+*** Recolor 流程
+    - 通过 miss rate 来判断是否进行回收/分配
+    - 设置标志位, 注意原子性
+    - 从 remote/local 找出合适的 color, 并进行回收/分配
+    - 置 assignment
+
+*** Recolor 细节
+
+**** Shrinkage
+     Lazy coloring
+
+**** Expansion
+***** Selective moving
+      直接对固定 page 数操作
+
+***** Redistribution
+      通过 access bit 查找近期内访问过的 page
+

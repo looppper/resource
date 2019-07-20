@@ -11,7 +11,11 @@
     3. showall:
 
 *** 只显示当前 subtree
-    C-x n s/w
+    - C-x n s/w
+    - C-c C-p :: 向上
+    - C-c C-b :: 向上(the same level)
+    - C-c C-n :: 向下
+    - C-c C-f :: 向下(the same level)
 
 *** 匹配高亮
     C-c / + 内容
@@ -123,4 +127,12 @@ file:./n1.org
 *** Dates and Times
 **** Shortcuts
      - C-c C-d :: 插入 deadline
+
+** Emacs
+
+*** Swiper
+    - C-S :: 在 minibuffer 查找当前文件
+
+*** Evil
+    - C-w C-w :: 下一个窗口
 

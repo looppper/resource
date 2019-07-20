@@ -1,0 +1,47 @@
+#+DATE: <2019-07-19 Fri>
+#+STARTUP: SHOWALL
+#+tags: arch, cache, partition
+#+TODO: TODO(t) | DONE(d)
+
+* 内容总结
+  
+** 内容摘要
+*** Dynaway
+*** Partitioning policies
+    
+** 具体实现
+*** Dynaway
+
+**** 实现方法
+     software/hardware??
+
+**** Profiling sparingly
+     one profiling phase per 40B cycles
+
+**** 减小测量的间隔与长度
+***** 间隔
+      等距抽样测量, 只测量半数的 way 性能.
+***** 长度
+      当改变划分尺寸, 线程会花时间进行填充, 此处如果抽样更少的划分尺寸, 就可减少这部分时间.
+
+*** Partitioning policies
+
+**** 对应用进行 cluster 划分
+***** 合并过程
+      将 N 个 apps 从 N 个 cluster 的状态逐渐合并, 最终成为一个 cluster 的过程
+***** 合并方法
+      进行多轮 pass, 每个 pass 合并一个 app
+***** 过程 metric
+      - Combined miss curve
+      - Partitioned miss curve
+
+**** 划分 way 中的策略
+***** 不同的 metric
+      提出 IPC, 利用 IPC 代替 miss rate 进行划分
+***** 带宽饱和
+      当所测量带宽饱和时, 选择主动降低或保持 IPC
+****** TODO 测量带宽的方法
+
+**** 选择合适的划分组合(k)
+     每合并一次, 利用 speedup 进行一次 way 划分, 并评价一次加速性能，直到所有 pass 结束后选出 K_best
+

@@ -1,0 +1,15 @@
+#+DATE: <2019-07-20 Sat>
+#+STARTUP: SHOWALL
+#+tags: arch, cache, plan
+#+TODO: TODO(t) | DONE(d)
+
+* 讨论计划
+
+** 时间限制
+   
+*** TODO 专注一件事
+    DEADLINE: <2019-07-20 Sat 10:05>
+    
+**** TODO 工作本身
+
+**** TODO 工作方法

@@ -1,0 +1,13 @@
+#+DATE: <2019-07-20 Sat>
+#+STARTUP: SHOWALL
+#+tags: arch, cache, plan
+#+TODO: TODO(t) | DONE(d)
+
+
+* 工作计划
+  
+** 程序运行
+*** 在机器上装 singularity
+
+
+*** 在 docker 中运行模拟器
