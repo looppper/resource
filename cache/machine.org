@@ -1,0 +1,7 @@
+#+DATE: <2019-07-20 Sat>
+#+STARTUP: SHOWALL
+#+tags: arch, cache, plan
+#+TODO: TODO(t) | DONE(d)
+
+
+1. 机器启动 openvpn 不能用 tmux

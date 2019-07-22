@@ -7,7 +7,34 @@
 * 工作计划
   
 ** 程序运行
-*** 在机器上装 singularity
+*** 机器本身
+**** 运行 gem5
+***** 模块安装
+****** TODO protocal buffer
+****** TODO tcmalloc
+****** TODO png.h
+****** TODO zlib
+       印象中是编译 python2 的时候需要加上 zlib 模块
+       1. 通过 c 验证系统中有 zlib 的库
+       2. 在 stackof[fn:1] 中找到两个方法,
+          - 在编译的时候加上编译参数
+          - 改动 Modules/Setup
+******* 编译参数
+        DEADLINE: <2019-07-20 Sat 17:25>
+******* python2
+        
+***** 结果复现
+**** 寻找 gem5 资料
+**** 查找相关 cache-gem5 代码
 
+*** docker
+**** 在机器上装 singularity
+**** 在 docker 中运行模拟器
 
-*** 在 docker 中运行模拟器
+** 文章思路
+
+** 文章撰写
+
+* Footnotes
+
+[fn:1] https://stackoverflow.com/questions/6169522/no-module-named-zlib

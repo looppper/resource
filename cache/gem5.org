@@ -1,0 +1,13 @@
+#+DATE: <2019-07-20 Sat>
+#+STARTUP: SHOWALL
+#+tags: arch, cache, plan
+#+TODO: TODO(t) | DONE(d)
+
+* gem5
+** 编译文件
+   - gem5.debug   :: 优化关闭
+   - gem5.opt
+   - gem5.fast
+   - gem5.prof
+   - gem5.perf
+** 
