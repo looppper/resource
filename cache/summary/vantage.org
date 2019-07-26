@@ -1,0 +1,4 @@
+#+DATE: <2019-07-26 Fri> 
+#+STARTUP: SHOWALL
+#+tags: arch, cache, plan, struc
+#+TODO: TODO(t) | DONE(d)

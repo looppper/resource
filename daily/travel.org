@@ -1,0 +1,10 @@
+#+DATE: <2019-07-23 Tue> 
+#+STARTUP: SHOWALL
+#+TAGS: bicycle
+#+TODO: TODO(t) | DONE(d)
+
+* 计划
+
+** 自行车包装邮递
+   28 号的飞机, 意味着 28 号就得到, 二十四号发车
+   26, 27 左右订机票

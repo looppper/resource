@@ -1,0 +1,25 @@
+#+DATE: <2019-07-26 Fri> 
+#+STARTUP: SHOWALL
+#+tags: arch, cache, plan, struc
+#+TODO: TODO(t) | DONE(d)
+
+* 文章结构
+
+** 文章内容
+
+*** UCP
+
+*** Kpart
+
+*** Coloris                                                            :2014:
+
+*** Swap
+
+
+** 目的
+  便于在阅读文章时统筹结构, 避免陷于个别主题而无法脱出的困境, 这在一定程度上也可以对不同内容进行对比
+
+*** 具体结构
+
+*** 阅读流程
+    一遍笔记, 二遍笔记
