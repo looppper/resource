@@ -2,3 +2,15 @@
 #+STARTUP: SHOWALL
 #+tags: arch, cache, plan, struc
 #+TODO: TODO(t) | DONE(d)
+
+* 内容总结
+
+** 摘要
+   1. 细粒度
+   2. 采用 cache arrays
+   3. 通过 *不全部划分* 来保证各个 partition 之间的严格孤立
+*** 性能与开销
+    1. 产生 1.5%的开销
+    2. 传统划分方法会对 71%的 workload 产生平均 7%的吞吐的下降, 而新方法会对 98%的 workload 产生 8%的吞吐提升
+
+** Intro

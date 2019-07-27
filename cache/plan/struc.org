@@ -7,14 +7,15 @@
 
 ** 文章内容
 
-*** UCP
+*** UCP                                                     :waypartitioning:
 
-*** Kpart
+*** Kpart                                                   :waypartitioning:
 
-*** Coloris                                                            :2014:
+*** Coloris                                                  :2014:pagecolor:
 
-*** Swap
+*** Swap                                          :waypartitioning:pagecolor:
 
+*** Vantage                                                            :2011:
 
 ** 目的
   便于在阅读文章时统筹结构, 避免陷于个别主题而无法脱出的困境, 这在一定程度上也可以对不同内容进行对比
