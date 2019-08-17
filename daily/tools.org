@@ -14,6 +14,10 @@
 *** git reflog
 *** git clone
     可以在本地进行库的复制
+*** 创建分支
+    git checkout -b xxx
+*** 查看分支
+    git branch
 
 ** ssh
     ssh 同步时直接将 rsa 文件加入到 au 文件中即可
