@@ -32,39 +32,39 @@
 *** 脚注
     kajsdfaskjdf[fn:1]
     jskdjf[fn:2]
-[fn:1] the link is www.asdf.org
+    [fn:1] the link is www.asdf.org
 
-C-c C-x f: 脚注的自动创建
-C-c C-c  : 脚注与定义处的跳转
+    C-c C-x f: 脚注的自动创建
+    C-c C-c  : 脚注与定义处的跳转
 
 *** tables
 
-| c1    | c2    | c4 | c3    | c5   |
-|-------+-------+----+-------+------|
-| aksdj | fj    | js | jkasf | jasd |
-| as    | asdjf | f  | sdf   | kj   |
+    | c1    | c2    | c4 | c3    | c5   |
+    |-------+-------+----+-------+------|
+    | aksdj | fj    | js | jkasf | jasd |
+    | as    | asdjf | f  | sdf   | kj   |
 
 
-C-c | : 创建 tables
-M-left/right: 向左/右移动该列
-M-S-left/right: 删除/插入一列
-M-up/down: 向上/下移动该行
-M-S-up/down: 删除/插入一行
-C-c -: 插入分割 
-C-c Ret: 功能同上, 只不过光标直接移动到下一行
-C-c ^:以多种方式对表格项进行排序
+    C-c | : 创建 tables
+    M-left/right: 向左/右移动该列
+    M-S-left/right: 删除/插入一列
+    M-up/down: 向上/下移动该行
+    M-S-up/down: 删除/插入一行
+    C-c -: 插入分割 
+    C-c Ret: 功能同上, 只不过光标直接移动到下一行
+    C-c ^:以多种方式对表格项进行排序
 
 
 *** Hyperlinks
-超链接格式
-+ [[link][desscription]]
-+ [[http://www.baidu.com][kjdf]]
-[[http://www.baidu.com][baidu]]
+    超链接格式
+    + [[link][desscription]]
+    + [[http://www.baidu.com][kjdf]]
+    [[http://www.baidu.com][baidu]]
 
-支持文件内或文件间的位置跳转
-file:./n1.org
-[[file:./n1.org::20][行数跳转测试]]
-注: target 与 custom id 是什么
+    支持文件内或文件间的位置跳转
+    file:./n1.org
+    [[file:./n1.org::20][行数跳转测试]]
+    注: target 与 custom id 是什么
 
 
 *** todo 
