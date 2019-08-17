@@ -1,0 +1,122 @@
+#+date: <2019-07-27 周六>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* Conference
+  实验室曾经投过的C类会议
+
+** DONE HPCC 2019[fn:1]
+   CLOSED: [2019-07-27 周六 18:41]
+   
+*** Paper Submission Deadline
+    TIME: <2019-02-10 周日> ==> <2019-03-23 周六> ==> <2019-04-15 周一>
+    这个会推迟了两次, 估计是没收满
+ 
+*** 地点
+    张家界·湖南
+
+*** 会议时间
+    TIME: <2019-08-10> 为期三天
+
+*** TODO 论文类型
+
+**** 会议收录论文数(2018)
+     共20个session, 105篇
+
+
+** DONE NPC 2019[fn:2]
+   CLOSED: [2019-07-27 周六 18:41]
+   
+*** Paper Submission Deadline 
+   TIME: <2019-05-15 周六> ==> <2019-05-22 周六> ==> <2019-05-31 周六>
+   18年是三月份
+
+*** 地点
+    内蒙古
+
+*** 会议时间
+    TIME: <2019-08-23 周六> 为期两天
+
+*** TODO 论文类型
+
+** DONE ISCAS 2019[fn:3]
+   CLOSED: [2019-07-27 周六 18:55]
+
+*** Paper Submission Deadline
+    TIME: <2018-10-31 周六>
+
+*** 地点
+    日本
+
+*** 会议时间
+    TIME: <2019-05-26 周六> 为期四天
+
+*** TODO 论文类型
+
+**** 会议收录论文数(2018)
+     几百篇
+
+
+** DONE ICPADS 2019[fn:4]
+   CLOSED: [2019-07-27 周六 18:55]
+
+*** Paper Submission Deadline
+    TIME: <2019-07-14 周六>
+
+*** 地点
+    天津
+
+*** 会议时间
+    TIME: <2019-12-00> 具体日期未定
+
+*** TODO 论文类型
+
+** DONE ICA3PP 2019[fn:5]
+   CLOSED: [2019-07-27 周六 18:55]
+
+*** Paper Submission Deadline
+    TIME: <2019-06-24 周六>
+
+*** 地点
+    墨尔本
+
+*** 会议时间
+    TIME: <2019-12-09 周六> 为期三天
+
+*** TODO 论文类型
+
+** DONE ISPA 2019[fn:6]
+   CLOSED: [2019-07-27 周六 18:59]
+
+*** Paper Submission Deadline
+    TIME: <2019-08-18 周六>
+
+*** 地点
+    厦门
+
+*** 会议时间
+    TIME: <2019-12-16 周六> 为期三天
+
+*** TODO 论文类型
+
+
+** 说明
+   由于这些会议的录取率查不到, 所以也无法直接比较投稿难度, 不过可以查询论文的引用率来比较
+   会议的水平
+
+* Footnotes
+
+[fn:1] http://csee.hnu.edu.cn/hpcc2019/ 
+
+[fn:2] http://epcc.sjtu.edu.cn/NPC2019
+
+[fn:3] https://www.iscas2019.org/
+
+[fn:4] http://www.icpads2019.cn/
+
+[fn:5] http://nsclab.org/ica3pp2019/
+
+[fn:6] http://ispa2019.com/
+
+
+
