@@ -14,10 +14,18 @@
 *** git reflog
 *** git clone
     可以在本地进行库的复制
-*** 创建分支
-    git checkout -b xxx
+*** 创建并切换分支
+    git checkout -b temp
 *** 查看分支
     git branch
+*** 切换分支
+    git checkout master
+**** 错误
+     只有在当前分支所有更改都提交之后才可以进行分支切换
+*** 合并分支
+    git merge temp
+*** 删除分支
+    git checkout -d temp
 
 ** ssh
     ssh 同步时直接将 rsa 文件加入到 au 文件中即可
