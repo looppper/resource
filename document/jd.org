@@ -1,0 +1,309 @@
+1. 纯主核版本 compiled and passed, 但是无法顺利运行, 且无法无打印输出
+    --> 当前办法, 从程序入口开始逐步调试, 找出报错问题根源所在
+
+2. 在pair_eff_inline.h出现浮点错误
+    --> 前后打印尝试
+
+3. compute()无法跑通
+    --> 打印调试
+    --> 从line 105开始对所有原子进行迭代计算, 直到最后函数末尾
+    --> 在对所有的原子进行迭代, 当进行到一定次数的时候, 会出现浮点异常
+    --> 单核组无法跑通所有atom
+    --> 但多核组可以跑通所有atom, 可以跑到最后一行, 但此时也会发生浮点异常
+    --> 也就是说在跑多核组的时候, 是有一个核组不会影响到的??
+
+4. compute()中浮点异常
+    --> 多个核组异常位置不同
+    --> 异常位置可知(根据pc值)
+    --> 打印
+    --> exp_term / x2 语句出现错误, 其中exp_term为0, 当前问题是可能x2出现为0的情况
+         --> 哪个地方出现0, 应不应该出现0
+    --> x = a * rc, a = sqrt(2) / re ;; re 为eradius, rc为0
+    --> rc = sqrt(rsq) ;; 其中rsq是坐标的计算值
+    --> 在最初的几个
+    --> 换个样例
+    --> 调用   
+             ElecNucElec
+             ElecElecElec
+             ElecCoreNuc
+             ElecCoreCore
+	         ElecCoreElec
+     --> i,j,ii,jj的意义, inum, ilist
+             inum: 当前neighlist的粒子
+             jnum: 当前neighlist的相邻neigh
+     --> 如何在不把错误的输出忽略掉的情况下找到错误产生的位置(精准定位到发生错误的轮次及位置)
+         --> 由于错误出现于浮点运算, 所以目的是找出当前调用函数(错误函数)的上层函数调用位置, 在这个程序中, 也就是自旋的0/1组合位置
+     --> 找出错误的位置, 以及当前样例中发生错误的位置
+     --> 1. 先找出位置, 但此位置可能由于异常的发生而导致不准确
+         --> 当前评估是在ee部分发生的错误(在错误发生前所有的进行的分支都是ee, 且最后一个分支是ee), 但不能否定是由于误差而导致的错误
+             --> 验证方法: 在每个调用前后都进行打印, 如果只有ee后(最后一个)不输出, 那么一定是该分支, 这里统一使用fprintf(stderr)
+             --> 结论: 错误的最后一个发生在ee，且只打印了调用前
+             --> 问题: 错误发生在ne中, 且错误为eradius为0, 但此时只有一个输出
+             --> 方法: 已打印出多个eradius值, 都为0
+             --> 问题: 所打印出来的都是0, 但是ee中的两个re却并不是零
+             --> 方法: 重新编译一个新的项目
+         2. 找到两个样例发生错误的轮数, 给出这个轮数的代表意义, 并找出可能错误的原子, 因为当前推断的是某一个粒子的rc值, 及粒子位置赋值不正确
+
+5. ElecElecElec:  电子与电子
+   Nuc: 代表原子
+   spin: 粒子自旋, 通过粒子自旋可以知道所计算粒子的类型, 0为原子, 1为电子
+   coul: 库仑
+   eradius: 粒子半径
+
+6. 问题: 由于主核版本问题, eff无法正常运行
+         当前直接对从核版本进行移植
+
+7. 方向
+   寄存器通信: 使用rma进行替换
+      --> sunway.h(全部封装到reg_reduce_inplace_doublev4()中)
+   向量化类型(doublev4 -> doublev8, intv8->intv16, 包括simd函数用法)
+      --> 将数据由四个double改为8个double
+      --> 使用simd_set_doublev8()直接将后四位变为0
+   athread: 直接加入crts进行替换
+   dma.h
+
+8. sunway.h
+    1) 从核加入 <crts.h>
+    2) 寄存器通信, 向量化doublev4
+        --> 按行执行, 先每两个进行通信, 再四个进行通信 
+        --> 再对行号为1的按列执行
+        --> len代表doublev4的个数
+        --> arr+j代表arr中的第几个doublev4, _ROW表示目的行号
+
+9. 在调用处改动doublev8
+   创建两个doublev4, 分别赋给eng_vdwl, eng_coul, virial
+     --> 当前的想法是将两个doublev4直接传给单个doublev8, 也就是在reduce的时候直接reduce一个即可
+     --> 直接赋0, 直接使用doublev8而不是数组
+
+10. poly_math
+    --> pair_tersoff
+    --> vsinnpi_pid(), vcosnpi_pid(), vexpd(), vpowd()
+    --> 如果有doublev16的接口时的变动
+    --> 使用了simd数学库, 但原来是doublev4, 原来做的人直接放的编译之后的版本, 
+    --> 当前机器上对于sin,cos,exp...有没有数学库
+    --> 方法: 找山大的开发人员
+
+11. 既然数据类型的长度改变了, 那么指令所支持的长度也一定会随之改变
+    注: 接口手册未改
+
+12. int256 --> intv16, 后面暂时赋相同的值(还是直接赋0) 
+
+13. shfw指令的作用: 将两个向量数据合并为一个
+
+14. transpose中的shff已经利用上了v8, 直接改动实参即可, 也就是两个transpose
+    这里需要将fc对应修改, 直接copy
+    
+
+15. tersoff
+    --> param3/param2(先确定调用方法, 再根据调用方法修改)
+      --> transpose
+        --> vshuffd_rc()待改动, 了解四个二进制的含义
+      --> asm
+      --> 直接计算
+      --> 调用库计算
+    --> transpose
+      --> 调用了13次, 其中5次使用了param2/3
+      --> 其中使用的参数都需要改为doublev8(改成doublev8是否正确)
+      --> 改动xj_v4, jatom_v4, type_v4(变量名暂时不动) 
+        --> 需要把jatom_v4的操作改动
+
+16. 32位对齐的意义是dma操作
+
+17. vshff
+    --> 原来的: fc有8位, doublev4共4个double, 每两位控制一个64bit, 原来前四位来自va(两个double), 后四位来自vb, 控制位控制结果中该个double来自对应va/vb的哪个double
+    --> 改动后的: fc有80位, 每5位控制一个32bit, 其中高一位表示来自va/vb, 其余4位表示来自其对应的32bit
+        例: (va 与 vb相同时)2301 --> 0000 2301 --> 54761032 --> (对于2)0(最高位控制位)0010, 前四位填0, 后四位填1
+            不相同时如何处理, 注意原来更改了哪些位, 现在有应该改哪些位, 与va, vb相同的情况处理方法相同, 都是*2与*2+1
+    --> 改动位置: transpose, simd_vsumd
+      --> 其中transpose中高位指的是va/vb, 且放在vc的高位还是低位未知(这个应该是对应高位), 暂时理解为va/高位, 按照test_cpc处理, 前四置一，后四置零
+    --> shuffd_rc:  是对四位进行转换, 产生十进制数
+
+
+#+date: 6.25
+当前修改版本: md1, 也就是山大修改后版本
+问题:
+  1. 查看原来进度, 主要目标是查看当前依旧存在问题, 以及原来报告的错误是否改正
+  2. 跟进
+     1) 上次shff是否全部改完
+     2) shff是否依然会报错()
+  3. 在进行改进时也要记录lj与tersoff中使用的方法, 以便在改进eff时使用
+  4. 当前应该修改何处位置, 当前报错位置, 还是shff位置, 虽然二者都处于tersoff
+     --> 检查上次修改tersoff的位置, 查看是否已经全部改正, 这里且需要查看后面引用shff的位置
+     --> ~ 9:15 查看定义以及全部使用位置
+                定义: 
+                    transpose 两处
+                    simd_vsumd
+                参数:
+                    原来所有的参数为doublev4
+         ~ 9:30 查看是否需要改动, 以及是否已经改动完成, 主要还是对比之前的代码
+                在定义处全部使用ccx进行替换, 定义处已经全部改正
+                不仅在tersoff使用了shff, 并且在lj处同样使用了shff, 但此处先全部修改tersoff处, 后续再根据相似的位置修改lj, 当前只关心tersoff
+         ~ 9:45 搞定shff
+
+17+. vshff
+通过查看vshff的改动来看定义是如何改动的, 再做调用上的改动
+过程: 了解前后两种vshff的变化, 原来的全部功能是什么, 当前应当改成什么样子
+原来是四个double, 当前变为8个后, 另外四个(后四个)是不是空着就可以了
+通过更改shff, 更改所有的doublev4, 且定义中的doublev4也需要改动, 不止更改定义的位置, 还是更改调用位置的使用方法
+   --> 主结构体没有doublev4
+       ftmp, fend: 本身只有4个double
+       ftmp_jx, fendx
+       v4_0
+       结构体中的定义, param3_v4, param2_v4
+       eng_virial_v4, virial_v4, eng_vdwl_v4, 以及多个bcast
+       fxyz, fac
+       ...
+    --> 当前对doublev4的改法, 只将v4->v8, 低位暂时用0填充
+问题: doublev4改成v8后哪四个空缺, 见之前的改动, 后四个
+      doublev8只定义, 后面的不填充是否为0
+    --> shff中使用哪些doublev4, 这里直接改为doublev8, 且这里使用的是0填充后的doublev8(这里正确性存疑)
+        *jatom_v4, *xj_v4, type_v4
+        param_lox, bigx
+        (2x4)param_hix, lam1, cutsq
+        jshort_lo, dij, r2ij
+        jshort_hi, ...
+        param_ij_lo, ...
+        param_ij_hi, ...
+        param_lo, ...
+        param_md, ...
+        param_hi, ...
+        fij_v4, fend_ij
+        tfj_v4
+        tfk_v4
+        
+        v4->v8
+        xj_v4, jatom_v4, type_v4(jatom赋值)
+        param_lox, param_hix(通过param_ij指针simd_load赋值, 其中后4个double非0)
+        bigx, lam1, cutsq: 作为transpose的输出参数存在
+        jshort_lox, jshort_hix: 输入函数, short_neigh
+        dij_v4等几个输出参数
+        param_ij_lox, param_ij_hix: 使用param_ij赋值
+        param2 struct: 输出
+        param_lox, param_mdx, param_hix: 使用param_ijxk
+        param3 struct: 输出
+        fij,zero: 计算
+        fend_ij: 输出
+        tfj,zero
+        fend_ij: 输出
+        tfk,zero
+        fend_ik: 输出
+
+变量的vshff:
+       & 操作产生的数值, 原来控制位为1~128
+       方法: 进行枚举, 共9种情况(当0<=i<=7, 为2^i, 否则为0)
+       此处va=vb, 即标志位可以都为0/1, 但如何进行转换
+       方法: 
+           1. 写一个从doublev4的shff转v8的函数
+           2. (picked)根据计算本身重新设计一个函数
+       shuffle本身的作用是什么
+
+改动方法: 
+        从第一个doublev4开始改, 源头, 且改类型的同时也改变量命名
+不同之处: 
+        创建方法
+        --> 传指针: 此时后四个double会被填充
+        --> 使用simd_set_doublev8: 把后四位填0
+容易产生错误的位置
+        1. 当连续使用double的时候, 类似于(*double + n)
+
+除声明外, 与doublev4类型有关的操作
+       simd_set_doublevx 
+       simd_load/store(额外关注一下store时是否覆盖原来后面的数据)
+       eng_virial等数组改为变量的, 使用时可能需要取址
+       
+       v4_0, v8_0不更改
+      
+v4->v8记录: 
+       1. ftmp, fend
+       2. v4_0: 这里命名方法不改, 因为已经有同名变量
+       3. fend的load的变量类型, *fend是一个四个double,
+          问题: simd的类型不对应, 只需要保证前四个的值正确即可
+          当前simd的类型正确性未知(应该是正确的, 传指针)
+       4. ftmp同上
+          再simd_store时应该会进行数据覆盖(一次写八个), 但在第二步还会恢复
+       5. 两个结构体定义
+       6. eng_virial
+       7. eng_vdwl
+       8. 几个doublev4 bcast
+       9. padding: 8->16
+       10. skip
+       11. skip_4
+       12. xi
+       13. param_lox, param_hix
+       14. bigx, lam1, cutsq
+       15. dij
+       16. r2ij + 六个量
+       17. fc
+       18. fc_4与之后的五个变量设为8的大小
+       19. fend_stor
+       20. jshort_lox, jshort_hix
+       21. idx等三个
+       22. param_ij_lox, param_ij_hix(fz_param_t是8个double的结构体)
+       23. param_lox, param_mdx, param_hix
+       24. skip
+       25. simd_vshff的问题, 第三个参数是一个十进制的变量
+           已利用枚举解决, 当不保证正确性
+       26. reg_reduce_v8
+       27. intv8未改
+
+问题记录:
+       1. bcast之后是floatv8, 需要强转为doublev8, 再进行计算
+       2. jatom load的时候, 出现类型不一致, 先利用类型转换解决, 但原本使用v4时可以
+       3. param_ij load的时候不允许void*类型, 这里需要操作字节, 但又不允许void*, 在外部操作
+          这里直接转成double*
+       
+      1. tersoff产生编译时错误, 需要调试时对语句调试, 找到可能报错的位置(这个也可能是因为库的缺失)
+      2. lj potential
+      3. EFF
+       
+      1. tersoff/lj的整体结构, 在看优化后的结构时, 需要对比原来主核版本的代码, 来查看其是如何进行优化的
+      2. MIEE
+
+      
+#+date: <6.26>
+编译时出现reload错误
+  --> detail: 提示在compute_attractive_para结尾出现reload错误  
+  调试1: 全部注释掉函数体后
+    问题: 出现doublev错误(改为doublev4??)
+  调试2: 注释部分函数体(由尾部开始调试)
+    过程: 先给出基本函数结构
+       1. 传递并设置基本变量 ~481
+  原因: simd_bcastf() 的调用导致错误的发生
+    可能: vshff()导致的错误, 是参数导致的问题
+  调试: 使用包装的v_shuffle_w()代替simd_vshff()实现
+    的确是vshff()的使用问题, 利用包装函数代替(simd_bcastf)
+    宏, 需要调用两次v_shuffle_w??
+  解决方法:  使用simd_vshffd, 定义在dma.h中, 原simd_vshff为float计算
+
+poly_math: 暂时先把头文件改掉, 消除错误
+方法: 利用论文细节单独实现, 并且只实现当前用到的函数, 而非全部
+
+vim:
+  打开, 补全, 注释
+
+#+date: <6.27>
+汇编指令出现错误
+   --> detail: vldd(warning), vmatch(error)
+    思路: 弄清vmatch指令含义, vmatch不存在, 进行替换
+        简单判断vmatch是否对最终值有影响, 暂时先注释掉
+    
+   在主核doublev4
+   __cgid, sigspec.c, 暂时先不注释掉
+----------- tersoff over, lj start-------------
+# dma 跨步接口更改
+
+~ 10:05: v4改完
+问题: 
+  1. 链接错误
+    --> Detail: TLS reference, non-TLS definition
+    --> 数学库函数未实现(注释掉试试)
+       注释测试: 同样无法通过
+    --> makefile
+    --> __cgid
+  2. shffd implementation
+
+ 理解:
+  1. jj分为4的原因 
+
+
+
