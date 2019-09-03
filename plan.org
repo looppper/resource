@@ -1,0 +1,18 @@
+#+date: <2019-09-03 Tue>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* 工作计划 && 时间安排
+
+** DONE DAY 1
+   CLOSED: [2019-09-03 Tue 13:31]
+*** DONE 电子版奖学金稿
+    CLOSED: [2019-09-03 Tue 14:23] DEADLINE: <2019-09-03 Tue 13:50>
+*** TODO 整理文档
+**** TODO 电子文档
+***** 同步文档结构整理
+***** 同步文档进行目录 set 及说明
+      - [ ]
+***** 同步文件添加
+**** TODO 纸质文档
+
