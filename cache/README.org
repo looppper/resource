@@ -1,0 +1,16 @@
+#+date: <2019-09-03 Tue>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* 目录结构
+
+** 文件
+*** conf
+    各类会议总结
+
+*** plan
+    关于 cache plan 的总结, 包括总结方法等, 也就是除了论文本身详细内容外的所有总结
+
+*** summary
+    各个论文的详细总结
+
