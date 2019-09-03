@@ -1,0 +1,29 @@
+#+date: <2019-09-03 Tue>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* 目录结构
+
+** 说明
+
+** 文件
+*** plan
+    - 如何对论文进行阅读和总结
+    - 对每一篇论文的阅读情况
+**** TODO 将阅读方法与具体论文的情况分开
+
+*** work
+    工作进度
+
+*** struct
+    对论文的分类, 标签
+
+*** gem5
+    对 gem5 simulator 的总结
+
+*** plan2
+    对工作的要求限制, 不包括工作内容
+
+*** machine
+    ??
+
