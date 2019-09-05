@@ -34,3 +34,13 @@
     "/%: 分屏
     $: 重命名
     ls/at -t x
+
+    
+** flash
+*** linux 下浏览器对 flash 的支持
+    - chromium 类使用 pepper-flash
+    - firefox 使用 flashplugin
+**** 注意
+     安装完 chromium 需要重启
+*** chromium 浏览器 flash 打开
+    域名左边的感叹号
