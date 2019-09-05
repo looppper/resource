@@ -15,4 +15,10 @@
       每个文档目录都要进行说明
 ***** 同步文件添加
 **** TODO 纸质文档
+*** TODO 晚饭
 
+** DONE DAY 2
+   CLOSED: [2019-09-05 Thu 11:11]
+   nothind none acturally
+
+** 

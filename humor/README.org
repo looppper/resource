@@ -1,0 +1,25 @@
+#+date: <2019-09-03 Tue>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* 目录结构
+
+** 说明
+   一般来说应当先确定主题, 再确定类型
+
+** 文件
+
+*** [#A] theme
+    总结固定场景
+
+*** [#A] type
+    总结固定表达形式
+
+*** [#C] adverbial
+    总结不同词性
+    - 代词
+    - 时间状语
+
+*** [#C] expression
+    总结表达方式
+

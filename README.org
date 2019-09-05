@@ -1,0 +1,33 @@
+#+date: <2019-09-03 Tue>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* 目录结构
+
+** 文件
+
+*** cache
+    论文工作
+
+*** daily
+    日常总结与技术手册
+
+**** TODO 把技术手册单独拿出来
+
+*** document
+    lammps 笔记
+
+*** gomoku
+    五子
+
+*** humor
+    语言
+
+*** others
+
+*** rep
+    待总结
+
+*** plan
+    计划
+

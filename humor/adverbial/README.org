@@ -1,0 +1,14 @@
+#+date: <2019-09-03 Tue>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* 目录结构
+
+** 文件
+
+*** pron
+    人称代词
+
+*** 时间状语
+    时间
+

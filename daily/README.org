@@ -1,0 +1,53 @@
+#+date: <2019-09-03 Tue>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* 目录结构
+
+** 文件
+
+*** 190701
+    综合文件, 大部分是感想一类的, 待整理
+
+*** blog_contruct
+    对博客方案的讨论
+
+*** bycycle 
+    自行车计划(已废弃)
+
+*** english
+    口语总结
+
+*** lammps
+    lammps 的一部分计划
+
+*** lan
+    一些好的语言(不全)
+
+*** list
+    作为其他内容的索引(完全可以用本文件替代)
+
+*** little forest
+    小森林总结
+
+*** man
+    org-mode 与 emacs 的总结
+
+*** ou
+    关于欧晓敏的一些话
+
+*** qi
+    五子的一些走法(已废弃-由棋谱代替)
+
+*** timetable
+    时间表(已废弃)
+
+*** tools
+    工具用法(手册)
+    - git
+    - ssh
+    - tmux 
+
+*** travel
+    旅行计划(不全)
+

@@ -1,8 +1,0 @@
-#+date: <2018-10-15 Mon>
-#+author: vincent
-#+tags: note, language, humor, adverbial, 时间
-
-#+caption: 时间区间     -- 形容时间的长与短
-1. 那晚
-     ex:  [1/1] 喊爹  ==> 那晚小区的声控灯就没停过
-   

@@ -1,7 +1,0 @@
-#+date: <2018-10-15 Mon>
-#+author: vincent
-#+tags: note, language, humor, expression, 程度
-
-1. 就没...过
-   ex:  [1/1] 喊爹  ==> 那晚小区的声控灯就没停过
-

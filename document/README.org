@@ -1,0 +1,19 @@
+#+date: <2019-09-03 Tue>
+#+STARTUP: SHOWALL
+#+TODO: TODO(t) | DONE(d)
+
+* 目录结构
+
+** 文件
+
+*** cc
+    话语
+
+*** node
+    节点命令
+
+*** jd
+    第一版笔记
+
+*** plan
+    七月笔记
