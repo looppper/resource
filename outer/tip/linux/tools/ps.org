@@ -1,0 +1,14 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-15 Mon>
+
+**** 查询进程状态
+     ps
+     
+**** -a
+     列出process status, 除了session leader(进程组的领导进程)
+     
+**** -ejH
+     列出进程树
+     
+**** 

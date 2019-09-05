@@ -1,0 +1,13 @@
+#+AUTHOR: vincent
+#+DATE:   <2017-06-09 Fri> 
+#+EMAIL:  xiaojiehao123@gmail.com
+
+
+*** tip
+    1. w: write
+    2. q: quit(q!)
+    3. u: backout
+    4. p: print the current line
+    5. [num]: print the line of numth
+    6. a: append
+    7. i: substitute

@@ -1,0 +1,2 @@
+1. Load /usr/lib/stardict/plugins/stardict_spell.so failed!
+   直接删掉即可

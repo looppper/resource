@@ -1,0 +1,157 @@
+#+AUTHOR: vincent
+#+TITLE: org-mode tip
+#+TIME: [2017-05-14 Sun 17:16]
+
+1. C-c C-e: 导出其他格式
+2. A-Enter: 快速建立同级标题
+3. A-左/右: 调整标题级别
+4. A-上/下: 调整标题位置
+
+5. 进行引用 
+#+BEGIN_QUOTE
+#+END_QUOTE
+
+
+6. [[the link of path(pic) of http][描述]]
+
+7. #+CAPTIOn: 这是描述
+   
+
+8. *加粗*
+
+9. _下划线_
+
+10. /斜体/
+
+
+11. H_20: 水的分子式
+
+12. =行内代码=
+=#include <stdio.h>=
+=int main()=
+={=
+=print("");=
+=}=
+
+13. 自动补全选项
+s    #+begin_src ... #+end_src  # 后面可以加语言名称
+e    #+begin_example ... #+end_example  : 单行的例子以冒号开头
+q    #+begin_quote ... #+end_quote      通常用于引用，与默认格式相比左右都会留出缩进
+v    #+begin_verse ... #+end_verse      默认内容不换行，需要留出空行才能换行
+c    #+begin_center ... #+end_center 
+l    #+begin_latex ... #+end_latex 
+L    #+latex: 
+h    #+begin_html ... #+end_html 
+H    #+html: 
+a    #+begin_ascii ... #+end_ascii 
+A    #+ascii: 
+i    #+index: line 
+I    #+include: line
+
+1. 利用tab和S-tab进行视图循环
+
+2. M-S-RET: 加入一个同级的TODO项
+
+3. M-S-左/右: 将当前子树整体调整标题级别
+
+4. 1) 创建有序列表
+
+5. +,-创建无序列表
+
+6. 添加脚注: 脚注本身放在最后一行， 并用[fn:x]引用，并在其中标注序号，在引用时直接使用与[]中相同内容即可
+
+7. C-c C-x f: 新建脚注
+   C-c C-c: 脚注与引用跳转
+
+8. C-c .: 创建一个时间戳
+    
+9. C-c C-k: 展开所有子树标题
+
+10. C-c C-n: 跳转到下一标题(任何级别的标题)
+
+11. C-c C-p: 跳转到上一标题(任何级别的标题)
+
+12. C-c C-f: 跳转到同级下一标题
+
+13. C-c C-b: 跳转到同级上一标题
+
+14. C-c C-u: 回到上一级标题
+
+15. M-RET, C-RET: 增加新标题
+    
+** table    
+*** C-c RET: 快速生成表格
+*** C-c |: 快速生成固定长宽的表格
+*** C-c C-c: 对表格进行重对齐，而不进行光标移动
+*** M-a: 移动到当前域的开头
+*** M-e: 移动到当前域的结尾
+*** C-c -: 向当前行的下一行插入水平分隔符
+*** C-c C-x C-w: 拷贝当前域的数据,并移动到下一行
+*** C-c `: 在另一屏幕中编辑当前域(在当前域文字较多的时候十分有用,退出时使用C-c C-c)
+*** org-table-import: 将文件一表格的形式进行录入
+*** 使用<n>来限定每个域只能有n个字符
+*** 可以将未格式化文本直接利用C-c |进行表格生成
+*** C-c ': 进行公式编写 例子: $4=$3*$2
+*** 在公式位置用C-c C-c: 进行公式应用(#+TBLFM: )
+*** 位置精确定位: @3$4: 三行二列
+*** 区域定位: @3$2..@4$5(左上角到右下角), $1..$3
+*** 引用其他表格区域: #+TBLFM: @3$2=remote(table1, @4$2)
+*** C-j: 向下另起一行表格(可以在表格中间实现)
+    
+** tags
+*** 文件级tag 
+    #+FILETAGS: :Vincent:Xyice:
+*** C-c C-q: 添加tag 
+    
+    #+ATTR_LATEX :float t
+    #+NAME: table-cycle
+    
+    
+
+    #+BEGIN_SRC c :includes <stdio.h>
+    
+    #+END_SRC
+
+#+PLOT: title:"Citas" ind:1 deps:(3) type:2d with:histograms set:"yrange [0:]" file:"./plot.png"
+| Sede      | Max cites | H-index |
+|-----------+-----------+---------|
+| Chile     |    257.72 |   21.39 |
+| Leeds     |    165.77 |   19.68 |
+| Sao Paolo |     71.00 |   11.50 |
+| Stockholm |    134.19 |   14.33 |
+| Morelia   |    257.56 |   17.67 |
+
+
+
+
+
+
+#+NAME: table1
+| NAME | price | amount | all |
+|------+-------+--------+-----|
+| hao  | hao   | hao    |   3 |
+| hao  | hao   | hao    |   3 |
+| hao  | hao   | hao    |   3 |
+#+TBLFM: @2$1..@4$3=hao
+
+
+
+
+
+| NAME | price  | amount | all |
+|------+--------+--------+-----|
+| hao  | hao    | hao    |   3 |
+| hao  | #ERROR | hao    |   3 |
+| hao  | hao    | hao    |   3 |
+#+TBLFM: @3$2=`random()`
+    
+    
+
+
+
+
+** others
+*** 插入当前时间
+    C-c .
+*** 转换格式
+    org-export-dispatch

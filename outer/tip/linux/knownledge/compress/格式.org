@@ -1,0 +1,23 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-18 Thu>
+
+**** tar
+     只是一种归档形式(而不包括压缩)
+
+**** gzip
+     是gnu/Linux的一种压缩工具, 算法是DEFLATE, 文件是gz
+     
+**** zip
+     规格开放, 算法不定(但主要是DEFLATE)
+     
+**** rar 
+     解码器开源, 但编码器是有专利的
+     
+**** 7zip
+     算法为bzip2与lzma
+
+**** 效率
+     tar(无压缩) < gzip < zip < rar <= 7zip
+     1. tar一般与压缩算法结合使用
+     2. zip较老, 但兼容性高, 而后两者兼容性则较低

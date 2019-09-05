@@ -1,0 +1,36 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-02-13 Tue>
+
+*** x
+    delete
+
+*** 左键选择
+    
+*** 禁止比例调节
+
+*** g
+    调节比例
+
+*** b
+    选择
+
+*** e
+    调节方向/copy(extrude)
+
+*** shift+r
+    重复上一次动作
+
+*** ctrl+n
+    改变形状
+
+*** t
+    隐藏/唤出界面
+
+*** f
+    填充
+
+*** spin
+    旋转(填入边/角度/各个轴的角度)
+    
+

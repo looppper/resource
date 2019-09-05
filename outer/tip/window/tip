@@ -1,0 +1,4 @@
+1. cd命令: 直接d:
+2. 将引导信息写入MBR(用windows引导): mbrfix
+   方法: cmd定位c盘，键入MBRFix /drive 0 fixmbr
+3. 使用ultraiso写入linux镜像,直接打开->写入硬盘镜像即可

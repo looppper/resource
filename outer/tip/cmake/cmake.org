@@ -1,0 +1,10 @@
+#+date: <2018-10-26 Fri>
+#+author: vincent
+
+1. 对于一个cmake构建项目下的子项目, 有可能产生checkout依赖, 所以cmake时要chechout整个项目, (cmake clang-tidy时要checkout整个llvm)
+   
+2. -DCMAKE_EXPORT_COMPILE_COMMANDS: 生成json格式的编译器调用(compiler call)
+   
+3.  -DAMAKE_C_COMPILER: cmake时选择的编译器
+   
+4.  cmake之后可以make任意tool

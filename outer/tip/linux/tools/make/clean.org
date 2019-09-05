@@ -1,0 +1,5 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-18 Thu>
+
+**** 删除大多数的编译生成文件， 但是会保留内核的配置文件.config， 还有足够的编译支持来建立扩展模块

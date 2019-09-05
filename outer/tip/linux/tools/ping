@@ -1,0 +1,8 @@
+1. ping - send ICMP ECHO_REQUEST to network hosts
+
+-f: 极限检测
+-n: 只输出数值
+-q: 只显示结果
+-i value(second): 设置发送包的间隔时间(1s in interval)
+-s: 每个包的字节数
+-c: 设置发送数量

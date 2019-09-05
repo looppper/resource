@@ -1,0 +1,5 @@
+#+DATE: <2018-05-10 Thu>
+#+tag: grub starter
+
+1. grub-mkconfig
+   生成一份grub configure file

@@ -1,0 +1,10 @@
+ * writer: vincent
+ * date: May 13, 2017, 17:04:42
+ *
+ * feature: the tr
+
+*** tr: 
+    #+BEGIN_SRC bash
+      tr '\0' '\n'
+      # exchange '\n'  with '\0'
+    #+END_SRC

@@ -1,0 +1,31 @@
+1. 滚动更新: -Syu
+2. 源列表: /etc/pacman.d
+3. 只需将注释删除就能释放源列表
+4. rankmirrors -n 6 mirrorlist.backup > mirrorlist  // 将源列表排序
+5. 官方网站上列有非官方源
+6. 开启32位支持
+7. 出现key could not be looked up remotely: 安装archlinux-keyring
+8. 系统更新时某文件发生错误
+   pacman -Syuw
+   删除错误文件
+   pacman -Syu
+9. arch开启32库(可以编译运行32程序)
+   在/etc/pacman.conf中将
+   [Multilib]
+   /etc/pacman.d/mirrorlist
+   的注释去掉
+
+10. 利用包管理器回滚
+    在镜像中添加Server = https://archive.archlinux.org/repos/this/is/date/$repo/os/$arch
+    例: Server = https://archive.archlinux.org/repos/2017/01/11/$repo/os/$arch
+    然后进行pacman -Syyuu
+
+11. 图片显示软件feh
+
+12. 修复搜狗拼音: 再安装fcitx,并选中搜狗拼音即可
+
+13. 半角切换: shift+space
+
+14. fcitx输入法把键盘格式设为English(US),(调试时候把格式设为别的能调出来？？)
+
+15. go-mtpfs /dicToMount  mtp挂载

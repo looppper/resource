@@ -1,0 +1,3 @@
+1. 命令: clang++ -std=c++11 $(pkg-config --cflags --libs Qt5Widgets) -fPIC -o hello hello.cpp
+
+2. 新的qt 5.7以上版本需要c++11支持

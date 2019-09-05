@@ -1,0 +1,11 @@
+1. 将java文件夹放在/usr/lib/jvm文件夹下，并改名java-8
+2. 在/etc/profile中添加
+
+export JAVA_HOME=/usr/lib/jvm/java-8
+
+export CLASSPATH=.:$JAVA_HOME/jre/lib/rt.jar:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+export HADOOP_INSTALL=/home/hadoop/hadoop/hadoop
+
+export PATH=$PATH:$HADOOP_INSTALL/bin:$PATH:$JAVA_HOME/bin:$PATH:$HADOOP_INSTALL/sbi
+
+3. 重新载入配置文件即可

@@ -1,0 +1,7 @@
+#+AUTHOR: vincent
+#+DATE: <2018-02-17 Sat>
+
+*** ifconfig
+    1. eth0(第一块网卡), lo(回环地址)
+    2. 查询当前开启的网卡
+       使用"ip link set <serial> up/down"

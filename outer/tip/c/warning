@@ -1,0 +1,2 @@
+1. strcat()最好不要嵌套，否则会segment core
+   例如: strcat(strcat(), strcat())

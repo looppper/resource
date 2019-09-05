@@ -1,0 +1,65 @@
+/*
+ * writer: vincent
+ * date:   April 02, 2017, 15:50
+ *
+ * feature: the usage of gdb(a linux code debugger)
+ */
+
+/*
+ * gdb在1988年由stallman编写，全称为gnu debugger, 使用gnu协议发行
+ *
+ * cgdb可以在操作的同时打印栈帧(当前操作位置)
+ */
+
+
+1. 编译文件时要使用 -g
+
+2. l(list): 列出节点信息
+
+3. 回车表示继续上一动作
+
+4. b(breakpoint) + linenumber: 设置断点
+                 + func_name: 为函数设置断点
+
+5. info: 查看信息,  例如: info b: 查看断点信息
+
+6. r(run): 运行
+
+7. n(next): 单步跟踪程序，不进入函数体，直接调用执行函数
+
+8. s(step): 步进: 进入函数体
+
+9. until: 跳循环
+
+10. until + line: 跳到某行, 如果是循环则进入下一次循环
+
+11. p + name: 打印变量
+
+12. finish: 运行直到当前函数完成并返回，并打印函数返回时堆栈地址及返回值及参数值
+
+13. bt: 显示当前调用堆栈
+
+14. q: 退出gdb
+
+15. delete num: 删除第几个断点
+
+16. 执行文件要在 r 后加文件名
+
+17. 指向某条语句时，这条语句待执行(还未执行，下一步执行)
+
+
+/*
+ * 打印功能
+ */
+
+1. 打印数组元素个数 : p(int [num])* array
+             或 p *array@num
+
+
+
+
+/*
+ * cgdb
+ */
+
+1. 切换调试与代码窗口Alt+u/Alt+i

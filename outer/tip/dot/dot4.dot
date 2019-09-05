@@ -1,0 +1,5 @@
+digraph G {
+  main -> {obj1;obj2}
+  obj1 -> {attr1;attr2}
+  obj2 -> {attr1;attr2}
+}

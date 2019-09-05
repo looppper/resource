@@ -1,0 +1,81 @@
+arch安装: 
+https://www.viseator.com/2017/05/17/arch_install/
+universal usb(lg gram要关闭secure boot************)
+
+1. 分区
+两个区 / 和 /boot
+(磁盘管理: 磁盘压缩)
+
+pacstrap /mnt base base-devel
+
+genfstab -L /mnt >> /mnt/etc/fstab
+
+arch-root
+
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+hwclock --systohc
+
+vim /etc/locale.gen
+vim /etc/locale.conf
+
+2. 在安装grub时遇到问题
+本来两个分区都是ext4， 但是在grub-install时报错, 后将/boot分区改为vfat可以
+grub-install --efi-directory=/boot --bootloader-id=arch_grub --recheck /dev/sda
+
+3. 添加用户
+    useradd -m -g users -s /bin/bash archuser
+    passwd archuser
+
+4. 配置网络
+   dpcpcd
+   
+5. i3
+   https://www.jianshu.com/p/2c45c5b4c1ab
+   https://github.com/ivyl/i3-config: 配置文件
+   
+6. 补全
+加入'set show-all-if-ambiguous on' 到/etc/inputrc中
+
+1. 安装yay(代替已停止开发的yaourt)
+   wget ==> makepkg -rsi
+   
+2. 添加sudoer权限
+   1) su -
+
+   2) chmod u+w /etc/sudoers
+      
+7. 更改openvpn
+   1. yay -S openvpn-update-systemd-resolved --needed
+   2. 改写ovpn配置
+
+
+8. i3/config.base: urxvt
+   
+9. 安装字体
+   https://wiki.archlinux.org/index.php/Localization/Simplified_Chinese_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)
+   
+10. 输入法
+    fcitx-configtool(需要重启), sunpinyin(自带双拼), fcitx-gtk2/3(否则浏览器无法调出), 
+    在/etc/environment添加LC_CTYPE="zh_CN.utf8"(防止在emacs无法调出)
+    
+11. xf86-input-synaptics: 触摸板
+    触摸配置: https://gist.github.com/roghnin/eeb6ec519271ec8235a6b42a4820a9b5
+    
+12. 终端字体
+    更改字体(下载字体, 在xresource中更改), 字距不合理是由于没有载入字体, 载入用xrdb xresource
+    
+13. 改.spacemacs(主题, hybrid-mode)
+    
+14. myinit.sh
+    
+15. startx -- bash_profile
+
+
+安装: xorg, i3, dmenu, xorg-xinit(i3启动), git, feh, fakeroot, openvpn, rxvt-unicode, bash-completion(提供pacman补全), unclutter, udiskie(auto mount), dunst, pulseaudio, autocutsel, pavucontrol, alsa-utils(alsamixer), unzip, screenfetch, tmux, openssh, acpi, zathura, zathura-pdf-poppler xcompmgr(透明), stardict, libreoffice, cmake, clang, llvm
+
+emacs, wget, 字体包, fcitx, fcitx-gtk3
+
+配置文件: bash, i3, rxvt, tmux, startx
+
+字体, 输入法, 终端透明
+

@@ -1,0 +1,3 @@
+wireless network interface
+
+and the ifconfig tool is "network interface"

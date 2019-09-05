@@ -1,0 +1,20 @@
+1. 移动操作通vim
+2. a: 缩放到合适大小
+3. s: 放大到窗口大小
+4. C-R: 反色
+5. tab: 进行标签检索
+6. 打开文件
+7. J/K: 上下翻页
+8. nG: 跳到n页
+9. H,L: 跳到页顶，末
+10. r: 顺时针旋转90°
+11. d: 切换到双页显示
+12. mX/'X: 设置/跳转quickmark
+13. 复制时到primary selection粘贴板
+
+8. parameter
+--page=n
+
+set selection-clipboard clipboard: 设置粘贴板到clipboard
+
+

@@ -1,0 +1,6 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-14 Sun>
+
+**** time: <2018-01-19 Fri>
+     更新之后屏幕挂掉, 使用bumblebee解决

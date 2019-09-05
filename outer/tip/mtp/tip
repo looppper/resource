@@ -1,0 +1,2 @@
+// 使用go-mtpfs-git
+1. go-mtp [DIR] // mount dev to DIR

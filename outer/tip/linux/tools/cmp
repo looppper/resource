@@ -1,0 +1,3 @@
+cmp: compare two file byte by byte
+     得到的结果返回$?变量, 结果为0则相同
+     此方法适合shell脚步, 或二进制文件比较

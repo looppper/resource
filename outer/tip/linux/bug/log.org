@@ -1,0 +1,11 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-14 Sun>
+
+**** <2018-01-16 Tue>
+     [problem]: warning: config file /etc/pacman.d/mirrorlist, line 201: directive 'Server' in section 'options' not recognized.
+     [method] : 注释掉pacman.conf中的[testing]
+     
+**** <2018-01-16 Tue>
+     [problem]: 用pacman安装文件时显示损坏
+     [method] : 更新pacman-key https://bbs.archlinux.org/viewtopic.php?id=230062

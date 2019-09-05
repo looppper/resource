@@ -1,0 +1,6 @@
+#+date: <2018-06-04 Mon>
+#+author: vincent
+
+-s: 区域抓取
+-e: 执行命令
+例: scrot cc.png -e 'mv $f ~/pic/'

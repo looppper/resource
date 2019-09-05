@@ -1,0 +1,40 @@
+1. ctrl+shift+f: 切换繁简体
+
+2. echo $0 // 表示输出当前shell
+
+3. grep -r 表示递归所有子文件
+
+4. SPC f R 重命名当前文件
+
+5. SPC c l 注释
+
+6. pacman -R 删除软件包
+
+7. ./configure --prefix=***(注意后面不加正斜杠)(这里的prefix还可能会换成别的，根据软件本身提供的命令来看)
+  (利用原码安装时务必要指定路径，方便以后删除)
+
+8. 有些源码包会提供删除make uninstall命令
+
+9. 利用whereis查看命令位置
+
+10. 编译(只是编译)scheme: echo $'(make-boot-file "main.boot" \'("scheme" "petite") "lib/b.ss" "lib/a.ss" "main.ss")' | scheme -q
+  运行: scheme --program main.boot
+
+11. (cf "lisp1")    // mit-scheme只兼容.scm后缀
+  (load "lisp1")
+
+
+12. linux源码见gnu.org
+
+13. chrome C+k: 在任意位置进行搜索
+          C+r: refresh
+          C+sh+o: 打开书签栏
+
+14. 网络连接不上:
+  1) ip link set <<interface>> down
+  2) netctl start <<protocol>>
+
+
+15. join命令对不同文本开头相同的内容进行匹配
+
+16. >>  重定向至末尾

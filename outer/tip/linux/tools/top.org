@@ -1,0 +1,4 @@
+top: 查看系统内存
+
+-u: 指定用户
+   例如: top -u vincent

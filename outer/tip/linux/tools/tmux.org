@@ -1,0 +1,2 @@
+*** tmux 恢复
+tmux at -t num

@@ -1,0 +1,5 @@
+bz2(解压): jxvf
+xz(解压): Jcf
+
+压缩：tar zcvf FileName.tar.gz DirName
+

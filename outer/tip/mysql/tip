@@ -1,0 +1,6 @@
+1. desc 表名: 查询表结构
+2. insert into table () values ()
+3. drop table_name
+4. alter table table_name drop column column_name / add column_name datatype:更改表结构
+5. set names utf8 //设置charset
+6. source数据库前必须先use空数据库

@@ -1,0 +1,20 @@
+#+caption: grub修复
+利用live usb进行修复
+mount /dev/sda9 /mnt
+mount --bind /dev /mnt/dev
+mount --bind /proc /mnt/proc
+mount --bind /sys /mnt/sys
+chroot /mnt /bin/bash
+grub-install --target=i386-pc --recheck /dev/sda
+grub-mkconfig -o /boot/grub/grub.cfg
+
+
+#+caption: 系统引导及grub的基础使用
+
+1. 系统引导功能简述
+系统启动引导管理器: 作为系统启动运行的第一个程序, 负责加载, 传输操作系统的内核, 此工作结束之后, 引导工作即结束
+
+2. 现如今常用引导
+
+   
+[1] http://www.winbaicai.com/help_154.html

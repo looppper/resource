@@ -1,0 +1,18 @@
+#+AUTHOR: vincent
+#+TIME: [2017-05-16 Thu]
+
+*** 使用xelatex编译
+
+*** 在数学符号和文字之间要加分隔符$,否则文字可能不显示
+*** _线要用正斜杠转义
+    
+    
+#+caption: 引用
+http://linux-wiki.cn/wiki/zh-hans/LaTeX%E4%B8%AD%E6%96%87%E6%8E%92%E7%89%88%EF%BC%88%E4%BD%BF%E7%94%A8XeTeX%EF%BC%89
+
+使用CTex暂时无效
+使用xeCJK可以 
+
+#+caption: beamer装换
+http://lab.grapeot.me/beamer
+将xeCJK的配置加到Beamer上

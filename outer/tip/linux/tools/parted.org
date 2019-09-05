@@ -1,0 +1,4 @@
+# resize partions
+resizepart [serial]
+END: [END 位置]
+# 最后要resize2fs /dev/xxx

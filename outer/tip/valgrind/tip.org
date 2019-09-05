@@ -1,0 +1,17 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-10-24 Wed>
+
+https://blog.csdn.net/sunmenggmail/article/details/10543483
+使用需要添加变量VALGRIND_LIB="/home/vincent/lib/valgrind"
+
+
+1. gcc -pg -o tmp tmp.c
+#+caption: 程序调用
+2. gprof ./tmp | gprof2dot.py |dot -Tpng -o report.png
+   
+#+caption: 详细程序调用
+valgrind --tool=callgrind ./tmp
+callgrind_annotate callgrind.out.XXX
+或
+gprof2dot.py -f callgrind callgrind.out.XXX |dot -Tpng -o report.png 

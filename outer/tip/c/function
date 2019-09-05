@@ -1,0 +1,175 @@
+strcpy is dangerous, instead it with strncpy
+
+/*
+ * writer: vincent
+ * date:   April 02, 2017, 15:50
+ *
+ * feature: list the function in c language
+ */
+
+
+/*
+ * catalog:
+ *
+ * 1. putchar()
+ * 2. getchar()
+ * 3. fgets()
+ * 4. fopen()
+ * 5. gets()
+ * 6. puts()
+ * 7. fprintf()
+ * 8. fscanf()
+ * 9. fgets()
+ * 10. strtok()
+ * 11. sizeof()
+ * 12. strcpy()
+ * 13. trim()  // code by myself
+ * 14. isspace()
+ * 15. strcat()
+ * 16. strlen()
+ * 17. memset()
+ * 18. malloc()
+ * 19. memcmp()
+ * 20. strcmp()
+ * 21. getch()
+ * 22. getche()
+ * 23. clrscr()
+ * 24. gmtime()
+ * 25: sprintf()
+ *
+ */
+
+1. int putchar(char): 向控制台输出字符　   head file: stdlib.h
+      功返回ASC||码，错误返回EOF, 当遇到回车时自动输出
+      该函数并未真正函数，而是putc(char ,stdout)的宏定义
+      例子: Y
+
+2. int getchar(void): 读取字符　　　　　　 head file: stdlib.h
+      成功返回ASC||, 错误返回-1并将字符显示
+      该函数是getc(stdin)的宏定义
+  　　例子: Y
+
+3. int fgetc(FILE *stream): 从steam中读取一个字符，直到结束返回EOF
+
+4. FILE *fopen(const char *path, const char *mode): 用指定的方式打开文件
+  head file: stdio.h
+  返回: 成功会返回流文件指针，失败则返回NULL,错误代码存在errno中
+  打开方式: r(只读，且文件必须存在)
+  　　　　　r+(读写方式打开文件，且文件必须存在)
+            rb+(二进制文件)
+            rt+(文本文件)
+            w+(打开可读/写文件，若文件存在则清为0,不存在则会建立文件)
+            a(以附加方式打开只写文件，若文件不存在,则建立文件，若文件存在，则会追加内容)
+
+5. char *gets(char *string):
+   从流中读取字符串，直到遇到换行符或者文件尾为止，加上NULL作为字符串结束，所读取的字符串暂存在给定的参数string中
+   head file: stdio.h
+   返回: 成功则返回string指针，失败则返回NULL
+   具有安全性问题(不检查string大小): 应该用fgets()代替
+
+
+6. int *puts(char *string)
+   将一字符串放入到标准输出流中，并在最后增加换行符
+   head file: stdio.h
+   返回: 成功返回非0值，否则返回0
+   与printf("%s\n",s)的功能相同
+
+
+7. fprintf(FILE *stream, const char *format, ...)
+   将内容定向到文件中
+   head file: stdio.h
+   返回: 成功返回字节数，失败返回-1
+
+8. fscanf(FILE *stream, char *format[,argument])
+   将文件流中的数据格式化输入
+   head file: stdio.h
+   返回: 成功赋值参数个数，失败参数个数可能小于赋值个数
+
+9. fgets(char *string, int size, FILE *stream)
+   从流中读取字符串
+   head file: stdio.h
+   返回: 成功返回字符串，失败或者字符串不够长则返回NULL
+
+
+10. char *strtok(char *s, const char *delim)
+    分割字符串
+    head line: string.h
+
+11. sizeof()
+     查询对象或类型的大小
+
+12. char *strcpy(char *dest, const char *src)
+    将src字符串拷贝至dest地址
+    head file: string.h
+
+13. trim() // code by myself ans it use the function isspace() rely on ctype.c
+
+14. isspace()
+  检查参数c是否为空格字符, 即' ','\n','\t'
+  返回值: 若c为空白字符则返回非0,否则返回0
+  head file: ctype.h
+  该函数为宏定义，并非真正函数
+
+15. char *strcat(char *dest, const char *src)
+    将src字符串复制到dest尾部
+    返回: dest的起始地址
+    head file: string.h
+  　dest与src的内存空间不能重叠，且要有足够的空间容纳src
+
+16. unsigned int strlen(char *s)
+    用来计算char*的长度，但不包括结束字符'\0'
+    返回: 返回字符串的长度
+    head file: string.h
+
+17. void *memset (void *ptr, int value, size_t num)
+    将内存的前n个字节设置为特定值
+  　value为0~~255(unsigned char)
+    必须将ptr声明为char [],不能声明为char *
+
+18. void *malloc(size_t size)
+    动态分配内存空间
+    返回: 成功返回指向该内存的地址
+    head file: stdlib.h
+
+19. int memcmp(const void *s1, const void *s2, size_t n)
+    比较s1, s2所指区间内的n个字符
+    返回: 相同返回0,不相同则返回第一个不相同字符的ASCii差值
+    head file: string.h
+
+20. int strcmp(const char *s1, const char *s2)
+    比较字符串
+    返回: 相同返回0, 不同返回差值
+    head file: string.h
+
+
+21. int getch(char)
+    读入字符不回显,不用回车
+    head file: conio.h
+
+22. int getche(char)
+    读入字符回显,不用回车
+    head file: conio.h  
+
+23. void clrscr(void)
+    清空屏幕缓冲区和显示器缓冲区
+    head file: conio.h
+
+24. struct tm *gmtime(const time_t *timep)
+    将time_t结构中的时间信息转换成现实世界中所使用的时间日期表示，并将结果由结构tm返回
+    head file: time.h
+    struct tm{
+       int tm_sec;
+       int tm_min;
+       int tm_hour;
+       int tm_mday;  //当前月份的日数
+       int tm_mon;
+       int tm_year;
+       int tm_wday;
+       int tm_yday; //从1/1算起的日数
+       int tm_isdst; //日光节约时间的旗标
+    }
+
+25. int sprintf(char *str, cahr format[,argu,...]);
+    用于将格式化的数据写入字符串(可以把整数打印进字符串)
+    head file: stdio.h
+    sprintf(str, "%d", int);

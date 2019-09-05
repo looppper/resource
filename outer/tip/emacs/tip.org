@@ -1,0 +1,99 @@
+#+TITLE: tip about emacs
+#+AUTHOR: vincent
+#+TIME: [2017-05-15 Mon]
+
+
+*** emacs粘贴外部文件:  
+    1) C + y
+    2) 鼠标中键位(触摸板上的滚动操作)
+    3) clipboard-yank
+    4) 输入法工具(不稳定)
+
+
+*** emacs复制外部文件:   
+    1) M-w
+    2) clipboard-kill-ring-save
+    3) clipboard-kill-region
+
+
+*** 换行命令: 
+    toggle-trancate-lines
+    inline-open: (2是alan风格的, 4是GNU风格的)
+    defun-block-intro: 4(框内缩进??) 
+    func-delc-conf: 函数加括号时的缩进(没啥用)
+
+
+*** revert-buffer: 刷新buffer
+
+
+*** 使用sudo: 在路径/后输入sudo::
+
+
+*** 折叠代码段
+    折叠展开当前代码段: z-a
+    折叠所有代码段: z-m
+    展开所有代码段: z-r
+
+    
+*** 返回到上次光标的位置
+
+
+*** 安装插件使用packages-install功能
+
+*** 安装插件
+     list-packages
+
+*** M-up/down: 给其他屏进行翻页
+
+
+*** delete-file: 删除文件
+    
+
+*** list-package: 命令进行melpa安装package
+    
+    
+*** 载入配置
+    load-file
+
+
+*** 高亮字符
+    M-s h r(hightlight-regexp) [字符]
+    
+
+*** 查看配置差异
+    SPC-f-e-D
+
+
+    
+*** 配置行号
+    SPC-t-r: 第一次静态显式行号，第二次动态显式行号
+    
+
+*** 关闭当前窗口
+    C-x 0
+    
+
+*** C-v: 可视块
+    
+
+*** 只读模式
+    SPC b w(read-only-mode)
+
+
+*** 撤销树
+    C-x u
+
+
+*** 向上提一行
+    C-e
+    
+*** C-m: 移动到下一行行首
+    
+*** <sp>-t-r:  分割线
+*** 替换 %s/text1/text2  --一行只替换一个(/g表示全局替换)
+*** whitespace-cleanup
+    消除空白
+*** 补全
+    1. 根目录使用gtags
+    2. emacs使用helm-gtags-dwim(安装gtags-gtags)
+

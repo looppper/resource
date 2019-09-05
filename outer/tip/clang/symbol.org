@@ -1,0 +1,10 @@
+#+DATE: <2018-05-20 Sun>
+
+** -DDBUG
+   用于测试, 
+   #+BEGIN_SRC C
+   #ifdef DEBUG
+   // do something
+   #endif 
+   #+END_SRC
+   上述代码只在带有'-DDEBUG'标记时会进行编译

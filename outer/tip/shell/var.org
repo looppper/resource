@@ -1,0 +1,14 @@
+#+date: <2018-08-05 Sun>
+
+#+caption: 常用变量
+1. $LD_LIBIARY_PATH: 链接库变量
+2. $PATH: bin变量
+   
+   
+#+caption: 打印变量
+export
+
+#+caption: 在原变量后增加变量
+export PATH=$PATH:<PATH A>
+
+

@@ -1,0 +1,14 @@
+#+author: vincent
+#+time: <2017-05-20 Sat> 
+#+title: some thing about bitset in stl
+
+
+*** 生成bitset<>
+    # 使用
+    bitset<8> foo(string("10110011") 
+
+*** 计算‘1’的个数
+    count()
+
+*** 计算‘1’的个数
+    size()

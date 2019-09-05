@@ -1,0 +1,8 @@
+ssh user@ip
+
+-p: port
+
+无密码配置: 
+# 将本地rsa.pub文件复制到server, .ssh/authorized_keys, 即可实现ssh. scp无密码操作
+1. 在.ssh下本地 ssh-keygen -t rsa
+2. 将id_rsa.pub追加到服务器.ssh/authorized_keys上即可

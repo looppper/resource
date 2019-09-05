@@ -1,0 +1,29 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-15 Mon>
+
+**** pid
+     process id
+     
+**** ppid
+     parent pid(父进程的pid)
+     
+**** tid
+     thread id
+     
+**** uid
+     user id
+
+**** gid 
+     group id
+     
+**** RID
+     real id
+
+**** EID
+     effective id
+     
+     
+
+*** 进程组
+    每个进程都会有一个进程组, 一个组可以包含多个进程, 一个进程组会有一个*precess group leader*, 其*pid*会成为该组的*PGID*以标识该组

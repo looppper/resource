@@ -1,0 +1,9 @@
+#+date: <2018-10-26 Fri>
+#+author: vincent
+
+如何build一个tool: https://stackoverflow.com/questions/47255526/how-to-build-the-latest-clang-tidy
+
+1. 将clang放到llvm/tools下, 将clang-extra-tools放到clang/tools下
+2. cmake llvm
+
+注意: 编译error会产生错误文件, 这会阻止下一次cmake的正确进行

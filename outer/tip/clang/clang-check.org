@@ -1,0 +1,2 @@
+1. 使用命令clang-chech file.cc -ast-dump --
+   The ‘–’ at the end is important as it prevents clang-check from searching for a compilation database.

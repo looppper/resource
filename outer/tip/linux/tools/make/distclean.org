@@ -1,0 +1,6 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-18 Thu>
+
+**** mrproper删除的文件， 加上编辑备份文件和一些补丁文件。
+ 

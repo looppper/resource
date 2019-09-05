@@ -1,0 +1,4 @@
+#+date: <2018-10-26 Fri>
+#+author: vincent
+
+1. chown vincent /this/to/path

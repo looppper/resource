@@ -1,0 +1,86 @@
+#+AUTHOR: vincent
+#+DATE:   <2017-06-16 Fri> 
+#+EMAIL:  xiaojiehao123@gmail.com
+
+
+*** summary
+    1. 查询内存大小: free
+
+    2. find -name -d
+
+    3. fd 代表 file descriptor: 文件描述符
+
+    4. mtp-fs: mtp
+
+    5. tee命令
+    　 tee: 只输出到标准输出( -a: append to the files )
+       tee file 同时输出到标准输出和文件
+
+    6. > text: 直接清空文件 或 cat /dev/null > file
+       
+
+    7. 重定向:
+        <,>分别表示标准输入，输出
+        0,1,2分别表示标准输入，标准输出，标准错误
+        &同时表示标准输出，标准错误
+        /dev/null(字符设备文件): 输出到此设备上的文件都将消失
+
+
+    1. diff file1 file2: 进行区别查找
+
+    2. file: 查询文件类型
+
+    3. 制作ubuntu　U盘
+       sudo dd if=...iso of=/dev/...
+       sudo eject /dev/...
+
+    4. 修改主机名: /etc/hostname
+
+    5. scp file hadoop(主机名)@slave1(用户名):/home/hadoop(用户目录)
+
+    6. top: 查看cpu利用率及内存利用率
+
+    7. 使用完u盘请不要立即拔掉,要umount掉,因为有些东西可行系统只是预写入,而不是真正写入
+
+    8. 挂载命令: sudo mount -o iocharset=utf8,gid=1000,uid=1000 /dev/sdb1 /mnt/flash/    // gid: 组ID, uid: 用户ID
+
+    9. GNU linker:  ld
+
+    10. 在新装完系统后，引导区windows引导丢失
+        使用grub-mkconfig -o /boot/grub/grub.cfg
+
+    11. 修改时间: date -s '12:34:56'
+
+    12. 关闭屏幕不断电: 修改/etc/systemd/logind.conf, 中修改为HandleLidSwitch=ignore
+
+    13. 进行文件校验: md5sum(md5校验)  sha1sum(sha1校验) PGP校验(非对称加密)
+
+    14. 改变xdg-open(mime)的打开方式: xdg-mime query filetype [file]
+                                    xdg-mime default [software.desktop] [filetype]
+        也可以直接更改/home/vincent/.local/share/applications中的mimeapps.list文件
+
+    15. fc-list查看字体
+
+    16. 压缩:(二次压缩会让文件加大)
+          zip -q -r target.zip  source
+          tar -zvf target.tar.gz source
+
+        cat /dev/null > file
+
+    17. lsusb 查看usb/u盘属性
+
+    18. lsb_release -a: 查看linux发行版
+
+    19. 打印cpu信息: cat /proc/cpuinfo
+
+    20. 关机等待: 修改/etc/systemd/system.conf 中 DefaultTimeoutStart/StopSec 为10s
+
+*** 格式化  
+    mkfs.ext4 /dev/sdc1
+    # 在之前要卸载u盘
+
+*** 制作u盘
+    dd if=xx.iso of=/dev/sdc1
+    o
+    
+

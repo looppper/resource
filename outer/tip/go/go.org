@@ -1,0 +1,3 @@
+#+date: <2018-06-24 Sun>
+
+1. 编译: go run code.go

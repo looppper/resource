@@ -1,0 +1,20 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-14 Sun>
+
+**** -S
+     安装
+
+**** -R
+     删除
+
+**** -Q
+     查询本地软件包
+     
+**** 解决更新时, key的问题
+     
+
+-Rdd libxfont;
+
+pacman -Sc: 删除旧的软件包
+pacman -Scc: 删除所以的软件包

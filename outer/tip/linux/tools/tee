@@ -1,0 +1,4 @@
+tee - read from standard input and write to standard output and files
+　　ex: tee: 只输出到标准输出
+        tee file 同时输出到标准输出和文件
+        -a: append to the files

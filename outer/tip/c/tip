@@ -1,0 +1,37 @@
+1. size_t 在32位机器上是4字节的(unsigned int)，在64位机器上是8字节的(long unsigned int)
+
+2. EXIT_SUCCESS, EXIT_FAILURE 定义在stdlib中的返回值
+   使用exit(0/EXIT_FAILURE/1/EXIT_SUCCESS)
+
+3. malloc()在堆区分配指定大小的内存区域
+   成功返回内存地址,失败返回NULL
+
+4. memset(s, ch, n) 将s中后的n个字节用ch替换并返回s
+
+5. ANSI/ISO C标准强制main返回值必须为int
+
+6. int argc表示参数个数, argv[]是参数列表
+
+7. 当直接打印数组元素时，只会打印第一个元素
+
+8. 为什么char*保存的是数组指针，但printf(%s)能打印出字符串呢，
+   因为定义的字符串结尾都有一个/0,打印程序遇到/0就会停止
+
+9. 在if(),while()等过程里进行
+
+10. printf, %ld表示long int
+
+11. * 与 []的区别，　使用指针是不能修改char（in read-only memory）
+                     使用[]则可以修改char
+
+12. 进行指针转换，直接用&进行取址
+
+13. 当进行值在函数中修改时，需要传递指针(用&取址)
+
+14. exit是退出所有程序，而return只是返回上级函数
+
+15. union同一个时间只能拥有一个位置
+
+16. typedef struct Student Student与 struct Student的区别
+    - 前者实现时直接用Student stu;
+    - 后者必须struct Student stu;

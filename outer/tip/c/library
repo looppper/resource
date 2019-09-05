@@ -1,0 +1,57 @@
+/*
+ * c标准库:
+ *    asserts.h
+ *    complex.h    c99
+ *    ctype.h
+ *    errno.h
+ *    fenv.h       c99
+ *    float.h
+ *    inttypes.h   c99
+ *    iso646.h     NA1
+ *    limits.h <climits>
+ *    locale.h
+ *    math.h
+ *    setjmp.h
+ *    signal.h
+ *    stdalign.h   c11
+ *    stdarg.h
+ *    stdatomic.h  c11
+ *    stdbool.h    c99
+ *    stddef.h
+ *    stdint.h     c99
+ *    stdio.h
+ *    stdlib.h
+ *    stdnoreture.h c11
+ *    string.h
+ *    tgmath.h     c99
+ *    threads.h    c11
+ *    time.h
+ *    uchar.h      c11
+ *    wchar.h      NA1
+ *    wctype.h     NA1
+ */
+
+
+
+1. stdio.h: 输入输出的标准库函数
+
+2. stdlib.h: 数值与字符串转换函数, 动态内存分配函数, 进程控制函数等公共函数
+             函数: exit
+
+3. string.h: 包括字符串处理及内存处理
+
+4. memory.h: 内存的相关操作
+
+5. unistd.h: unix standard的简称,定义了针对系统调用的封装, fork, pipe, read, write, close
+
+6. fcntl.h: 定义了open...
+
+7. conio.h: 定义了ms-dos,win32等环境下的数个函数,包括getch(),getche(),putch()...
+              但类unix环境下编译器均不支持
+
+8. iostream.h: 标准输入输出流头文件，基础是类模板的层级结构
+
+9. ctype.h: c语言字符分类函数，用于测试字符是否属于特定的字符类别
+
+10. limits.h: 用于检测整型数据数据类型的表达范围, 判断某些数据类型的最大值和最小值
+              定义: INT_MAX...

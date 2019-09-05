@@ -1,0 +1,4 @@
+1. sed -i '1 i\string to insert' the.file
+# 在第一行前插入字符串
+
+2. 当插入文件为空文件时不能成功插入

@@ -1,0 +1,4 @@
+$SHELL: 当前shell变量
+
+增加PATH: 在/etc/profile或.bashrc中加入 export PATH="$PATH:/this/is/bin"
+

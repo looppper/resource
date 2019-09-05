@@ -1,0 +1,9 @@
+// 指令集
+1. PUSH: 把字压入堆栈
+ESP(指示栈顶,指向栈中最低位置的数据)
+
+2. SUB:  减法
+SUB ax bx: ax = ax - bx
+
+3, ADD: 加法
+ADD ax bx: ax = ax + bx

@@ -1,0 +1,4 @@
+nohup: 
+  後台运行程序
+  
+nohup command &

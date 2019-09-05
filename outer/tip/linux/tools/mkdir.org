@@ -1,0 +1,12 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-18 Thu>
+
+**** -p
+     递归建立
+     mkdir ~/test1/test2
+     如果存在的话则使用已存在的目
+     
+**** 同时建立多个目录
+     mkdir test/{test1,test2}
+     

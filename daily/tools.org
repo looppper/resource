@@ -44,3 +44,5 @@
      安装完 chromium 需要重启
 *** chromium 浏览器 flash 打开
     域名左边的感叹号
+*** 问题
+    flash 无法使用 fcitx 输入法打字, 但纯英文可以

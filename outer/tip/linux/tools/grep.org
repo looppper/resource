@@ -1,0 +1,17 @@
+#+DATE: <2018-08-01 Wed>
+#+author: vincent
+#+TAGS: grep and example
+
+1. -R: 递归查找(遇到符号链接不停止)
+2. -i: 忽略大小写
+3. -r: 递归查找(遇到符号链接停止)
+4. --color: 颜色标记
+5. -n: 行标记
+
+ex: grep -R 'content' ./dictionary
+".*content.*"
+
+#+CAPTION: 同行中间存在间隔
+grep -r -n "content1.*content2"
+
+grep depth limit: find . -maxdepth 1 -exec grep foo {} \

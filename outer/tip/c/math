@@ -1,0 +1,3 @@
+使用abs　　<stdlib.h>
+使用sin    <math.h>   加入-lm编译
+平方 paw(x,y) 表示x^y

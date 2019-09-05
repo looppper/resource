@@ -1,0 +1,14 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-12 Fri>
+
+*** 
+**** time
+     org-time-stamp
+     
+**** source-block short-cut
+     <s TAB
+
+**** alt+enter 与 ctrl+enter区别
+     1. 空操作: 前者不跳行, 后者跳行
+     2. 带有序号时: 前者接入序号, 后者接小标题(且跳行)

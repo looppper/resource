@@ -1,0 +1,12 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-10-24 Wed>
+
+** 查询设备
+   xrandr
+   
+** 翻转
+xrandr --output name --rotate left/right/normal/inverted
+** 转换屏幕
+   C, D为空屏
+   当前屏幕为A, 切到C, 此时C即为与A同屏

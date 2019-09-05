@@ -1,0 +1,18 @@
+1. 原生自动补全: C-x C-i
+
+2. split/vsplit filename: 窗口分割
+
+3. C+w+r: 更换窗口位置
+
+4. 更换主题: 在.vim目录下新建colors文件夹即可
+
+5. C+w+w: 切换窗口
+
+6. ls: 查询buffer
+
+7. bd: kill buffer
+
+8. bn/p: 下/上一个文件
+
+9. set wrap: 折行
+

@@ -1,0 +1,21 @@
+#+caption: 更改数据仓库目录
+mongod -dbpath=/this/is/path
+
+#+caption: mongodb编译命令
+buildscripts/scons.py all CC=/public3/home/vincent/download/gcc-5.4.0-build/DestDir/usr/local/bin/gcc CXX=/public3/home/vincent/download/gcc-5.4.0-build/DestDir/usr/local/bin/g++
+
+ python2  buildscripts/scons.py install --prefix=/public3/home/vincent/temp/build4 CC=/public3/home/vincent/download/gcc-5.4.0-build/DestDir/usr/local/bin/gcc CXX=/public3/home/vincent/download/gcc-5.4.0-build/DestDir/usr/local/bin/g++ all   -j16
+ 
+ python2  buildscripts/scons.py install --prefix=/public3/home/vincent/temp/build4 CC=/public3/home/vincent/download/gcc-5.4.0-build/DestDir/usr/local/bin/gcc CXX=/public3/home/vincent/download/gcc-5.4.0-build/DestDir/usr/local/bin/g++ all   -j16
+
+#+caption: mongodb指定配置文件
+./mongod --config=/this/is/path
+./mongod -f /this/is/path
+
+
+#+caption: 集群注意
+出现错误100时, 删除lock文件/改变db 并删除log
+
+关闭: db.shutdownServer(), kill -15 <pid>
+
+config = {_id : "testrs",members : [{_id : 0, host : "210.45.112.40:26302" },{_id : 1, host : "210.45.112.40:26303" }]}

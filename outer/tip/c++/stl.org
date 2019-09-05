@@ -1,0 +1,44 @@
+#+AUTHOR: vincent
+#+TIME: <2017-05-19 Fri> 
+
+*** stack
+    函数; 
+      - emplace(ele)
+      - empty()
+      - pop()
+      - push()
+      - size()
+      - swap() 交换两个stack
+      - top()
+        
+
+*** list
+    函数:
+      - empty()
+      - size()
+      - max_size()
+      - front()  // access the first element
+      - back()
+      - assign([iterator first, iterator last], [size_type n, const & val], [list li]);
+      - emplace(position, [args]) // emplace能放入pair等复杂类型
+      - emplace_front()
+      - emplace_back()
+      - push_front
+      - push_back
+      - insert
+      - erase
+      - swap
+      - resize
+      - clear
+      - splice   // 两个list的元素相互转换
+      - remove
+      - remove_if
+      - unique
+      - merge
+      - sort
+      - reverse
+
+
+
+
+

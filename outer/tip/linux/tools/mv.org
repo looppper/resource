@@ -1,0 +1,2 @@
+1. 直接加后缀
+mv name{,suffix}

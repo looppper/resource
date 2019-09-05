@@ -1,0 +1,7 @@
+在这之前也要改变配置文件, 要不然不允许转换pdf
+just before </policymap> in /etc/ImageMagick-7/policy.xml
+ <policy domain="coder" rights="read | write" pattern="PDF" />
+
+ 
+转换命令
+convert -density 300  turingmachine.pdf -quality 100 output.png

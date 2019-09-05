@@ -1,0 +1,6 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-18 Thu>
+
+
+**** 删除所有的编译生成文件， 还有内核配置文件， 再加上各种备份文件

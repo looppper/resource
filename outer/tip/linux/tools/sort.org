@@ -1,0 +1,28 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-18 Thu>
+
+**** -u
+     去掉重复行
+
+**** -r 
+     降序(默认升序)
+     
+**** -o
+     写入文件(重定向不可以)
+     
+**** -n
+     进行数值排列(默认是字符排列)
+     
+**** -t 
+     设定间隔符(' '表示空格)
+
+**** -k
+     设定列数(设定多个来表示优先级)
+     ex: 
+     sort -t : -k 2 file.txt
+     apple : *10* : 20
+     
+     ex:
+     sort -t ‘ ‘ -k 3nr -k 2n facebook.txt
+     // 3nr

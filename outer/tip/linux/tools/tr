@@ -1,0 +1,8 @@
+ * writer: vincent
+ * date: May 13, 2017, 17:04:42
+ *
+ * feature: the tr
+
+*** tr: 
+tr '\0' '\n'
+# exchange '\n' 

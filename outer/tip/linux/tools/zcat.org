@@ -1,0 +1,5 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-18 Thu>
+
+**** 用于不解压文件的情况下即可读出文件

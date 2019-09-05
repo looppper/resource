@@ -1,0 +1,5 @@
+#+caption: 技巧: 在SHELL中直接编辑文本
+cat > textname << EOF
+name
+year
+EOF

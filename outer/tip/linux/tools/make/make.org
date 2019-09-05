@@ -1,0 +1,11 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-04-29 Sun>
+
+1. 格式
+<target>:[prerequisites]
+[tab][commands]
+# prerequisites与commands必须存在其一
+# 执行make [target] 执行目标
+# 直接执行make只执行第一个目标
+

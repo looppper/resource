@@ -1,0 +1,7 @@
+#+AUTHOR: vincent
+#+DATE:   <2017-06-21 Wed> 
+#+EMAIl:  xiaojiehao123@gmail.com
+
+
+*** const
+    1. 在函数结尾时: 当修改了函数成员或调用了其他非const成员函数, 都会产生error

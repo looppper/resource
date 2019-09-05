@@ -1,0 +1,5 @@
+#+AUTHOR: vincent
+#+DATE:   <2017-05-29 Mon> 
+
+*** summary
+    1. yum -y install ..h

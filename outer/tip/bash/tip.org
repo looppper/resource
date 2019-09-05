@@ -1,0 +1,23 @@
+ * writer: vincent
+ * date: May 13, 2017, 18:32:01
+ *
+ * feature:
+   
+*** warning
+   
+1) var=value
+2) var = value
+3) if后加空格
+4) 判断框内两端也要有空格[  ]
+5) -ne: 表示!=  
+6) !=加不加空格无所谓
+7) 字符串中'"', '{', '}','$'需要转义   
+
+
+
+
+*** technique
+1) shell的参数扩展    
+   ${parameter:+expression}
+   # 当且仅当parameter有值且不为空时才使用expression
+   

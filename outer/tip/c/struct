@@ -1,0 +1,8 @@
+/*
+ * writer: vincent
+ * date:   April 02, 2017, 16:58
+ *
+ * feature: the numberable struct in c
+ */
+
+1. FILE: 提供输入输出流的执行信息 head file: stdio.h

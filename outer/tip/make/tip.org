@@ -1,0 +1,5 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-10-24 Wed>
+
+**** 并行编译 make -j32

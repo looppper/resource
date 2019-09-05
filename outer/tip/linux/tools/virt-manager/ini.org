@@ -1,0 +1,15 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-31 Wed>
+#+TAGS: VM, QEMU, arch
+
+1. 安装virt-manager, qemu, libvirt
+2. 打开libvirt服务
+  #+BEGIN_SRC bash
+  sudo systemctl enable libvirtd.service
+  sudo systemctl start libvirtd.service
+  #+END_SRC
+3. 使用root打开virt-manager
+4. 一路使用默认(这里使用的是slitaz-linux.iso)
+5. 在选择网络时安装firewalld, 执行pacman -Syu ebtables dnsmasq
+   否则提示"could start virtual network"

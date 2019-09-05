@@ -1,0 +1,1 @@
+1. 优化pow(a,2) -> a*a, 而不会优化pow(a,6) -> aaaaaa

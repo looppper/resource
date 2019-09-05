@@ -1,0 +1,19 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-18 Thu>
+
+**** 清理
+     make mrproper(清空编译文件及二进制文件)
+     
+
+**** 生成配置文件
+     zcat /proc/config.gz .config
+     在General Setup中更改版本(避免覆盖当前内核)
+     make menuconfig
+     
+
+**** 存放临时文件
+     mkdir -p ~/kernelbuild
+
+**** 加人编译参数
+     -fPIC

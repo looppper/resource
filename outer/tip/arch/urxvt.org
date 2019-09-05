@@ -1,0 +1,14 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-01-14 Sun>
+
+**** copy && paste
+     alt+ctrl+c/v
+     
+**** 配置文件
+     .Xresources
+
+**** xrdb
+     xrdb config(立即生效)
+     
+**** 字体配置

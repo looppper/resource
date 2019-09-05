@@ -1,0 +1,157 @@
+#+AUTHOR: vincent
+#+TIME: [2017-05-16 Mon]
+
+*** map<x, y> p;  p.first代表x,   p.second代表y
+
+
+*** delete会删除对象指针,擦除所占用内存
+
+
+*** 使用const &表示, 函数以传址方式执行(执行效率高), const防止值改变
+
+
+*** 不能返回局部变量的指针或引用
+
+
+*** vector用法:
+    1) ans.insert(ans.begin()[position], val)  # 进行插入
+    2) ans.erase(ans.begin()[position])        # 进行删除
+
+
+***  域声明
+   - 使用using namespace std 就不用使用std::了
+   - 声明std域时可以用using std::endl进行单独指定以免发生域冲突
+   - 也可以对自己声明的函数单独放置在一个namespace里
+     
+
+*** 现代for:
+   for(declaration : expression)
+   例如:
+      vector <int> ans;
+
+      for(auto &r: ans)
+               r *= 2;
+
+
+*** 在c++的类方法实现与类的引用文件中要加入
+   #include "class.cpp"
+
+
+*** 在方法实现的文件中还需要指定某个类
+　 例: void dog::howl() { }
+
+
+*** 方法在声明时用const, 在实现时也需要用const
+
+
+*** bool分为false, true
+
+
+*** const作用: 防止值改变
+    1) 保护指针
+    2) 保护引用传递的数据(使用引用可以加快数据传递，但同时又会改变数据本身，而const而禁止了这一现象)
+    (内部类型的数据不用进行引用传递，其复制速度基本等同于其引用速度)
+
+
+*** 字符串连接直接相加
+
+14, 函数必须先声明后使用，可以分开存放在两个不同的文件中
+
+
+*** int to char: a + '0'
+    char to int: a - '0'
+
+
+*** string + char 是合法的(追加是合法的，定义是使用不合法)
+
+
+*** c++中的map使用红黑树进行实现的
+
+
+*** map<k, v>使用 ans.find(key)->second
+    使用count()来判断一个元素是否在map中
+    insert()不能改变value, 可以利用find赋值   
+    // insect.insert(pair<string, int>(ans.first, ( insect.find(ans.first)->second ) + 1));    容易造成core dump
+    insect.find(ans.first)->second++;
+
+
+*** 将变量定义在main函数中
+
+
+*** typeid().name()  //需要typeinfo头文件,检测类型
+
+
+*** explicit: 防止在使用时进行类型的隐式转换
+
+    
+*** 声明iterator list<int>::iterator iter;
+    <algorithm>中的find方法: find(list.begin(),list.end(),7) //返回iterator
+    list.remove(7);
+    list.push_back(7);
+    list.empty();
+    list.front() //返回第一个元素
+
+
+*** 普通数组也可以用for(auto)
+
+
+*** 引用参数应当在能定义为const的情况下，尽量定义为const
+    string fun1(); string fun2();
+    string &tr = fun1(); //error, 局部变量直接销毁，引用无效
+    string &tr = fun2(); //成功，　函数直接生成引用返回
+
+
+*** 要将模板类和主函数分离在两个文件中要在主函数中include所使用的那个cpp文件
+
+
+*** ->符号相当与*(this).      访问成员变量时使用
+
+
+*** new for只能用于带有iterator的结构
+
+
+*** static关键字
+    实现多个对象共享数据
+    三种访问方式
+    #+BEGIN_SRC C++
+    // 通过类访问
+    Student::m_total = 10;
+    // 通过对象访问
+    student.m_total = 20;
+    // 通过对象指针访问
+    pstu->m_total = 30;
+    #+END_SRC 
+    static 成员变量不占用对象的内存，而是在所有对象之外开辟内存，即使不创建对象也可以访问。具体来说，static 成员变量和普通的 static 变量类似，都在内存分区中的全局数据区分配内存.
+    
+      
+
+
+*** <algorithm>中的find方法
+    例子: 
+      vector<int>::iterator it = find(vec.begin(),vec.end(), valueToFind);
+      if (it != vec.end())
+        return true;
+      else
+        return false;
+
+
+*** 拷贝构造函数
+    ClassName(const ClassName& obj)
+    
+*** clang不支持一致性初始化与初始列
+    
+*** 清屏技巧
+    cout << string(50, '\n');
+    
+*** const在末尾
+    - 不能改变成员变量, 不能使用非const函数
+
+*** private中的函数实现不能在class外实现
+    
+*** && 表示右值引用(常数), 右值使用后左值与右值均不能再次使用, 而左值则没有这个限制
+    
+*** 利用move()直接使用右值作为参数以大幅提高效率
+    
+*** 打印vector
+      copy(vc.begin(), vc.end(), ostream_iterator<int>(cout, " "));
+

@@ -1,0 +1,7 @@
+#+AUTHOR: vincent
+#+EMAIL: xiaojiehao123@gmail.com
+#+DATE: <2018-07-19 Thu>
+#+TITLE: ycsb benchmark测试
+#+TAGS: ycsb, benchmark, mongodb
+#+LAYOUT: post
+#+CATEGORIES: 
