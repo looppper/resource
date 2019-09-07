@@ -31,3 +31,5 @@
 *** plan
     计划
 
+*** outer
+    包括 blog, tip, 但不包括 note

@@ -21,4 +21,12 @@
    CLOSED: [2019-09-05 Thu 11:11]
    nothind none acturally
 
-** 
+** DONE DAY 3
+   CLOSED: [2019-09-07 Sat 10:06]
+*** TODO 设计安静下来的方法
+*** TODO 取笔记本
+*** TODO 整理纸质笔记
+
+** TODO DAY 4
+*** TODO 写想法
+    DEADLINE: <2019-09-07 Sat 10:15>
