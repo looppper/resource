@@ -46,3 +46,16 @@
     域名左边的感叹号
 *** 问题
     flash 无法使用 fcitx 输入法打字, 但纯英文可以
+
+** adb
+*** 工具路径
+    /opt/genymotion/tools
+*** 使用方法
+   1. devices
+   2. connect
+   3. adb push/pull 
+   4. x86 转换为 arm
+
+** PPT
+   调节行距: Alt+o+s
+   去红字: 审阅->编写检查->忽略
