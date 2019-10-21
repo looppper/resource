@@ -53,9 +53,15 @@
 *** 使用方法
    1. devices
    2. connect
-   3. adb push/pull 
-   4. x86 转换为 arm
+   3. adb push(pull) file /sdcard
+   4. x86 转换为 arm https://github.com/m9rco/Genymotion_ARM_Translation
 
 ** PPT
    调节行距: Alt+o+s
    去红字: 审阅->编写检查->忽略
+
+** pdfpc
+   windows 调制扩展模式
+   隐藏 tasktar: 右键 taskbar
+   cmd: bash
+   https://github.com/pdfpc/pdfpc
